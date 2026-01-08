@@ -31,7 +31,7 @@ Source of truth:
 - 工程化沉澱：把一次解法變成可重用的流程/工具/規範
 
 
-> **自動更新**：本頁由 GitHub Actions 定期重建（你只要寫程式/寫證據/更新專案資料即可）。最後更新：`2026-01-08 05:48 UTC`
+> **自動更新**：本頁由 GitHub Actions 定期重建（你只要寫程式/寫證據/更新專案資料即可）。最後更新：`2026-01-08 14:29 (UTC+8)`
 
 ---
 
@@ -39,13 +39,7 @@ Source of truth:
 
 <div align="center">
 
-**ZH**
-
-![Skill Radar ZH](./assets/skill-radar.zh.svg)
-
-**EN**
-
-![Skill Radar EN](./assets/skill-radar.en.svg)
+![Skill Radar](./assets/skill-radar.svg)
 
 </div>
 
@@ -58,9 +52,33 @@ Source of truth:
 | Project | One-liner | Tech | Proof |
 |---|---|---|---|
 
-| **Core Product (Replace Me)**<br/>`g5120u/core-product` | 我主導/深度參與的核心產品（替換成你的專案） | TypeScript, Node.js, PostgreSQL, Docker | [Case Study](./evidence/sample-case-study.md) |
+| **365GeoWork-map-showcase**<br/>`g5120u/365GeoWork-map-showcase` | 地圖任務展示模組（使用 Leaflet + Mock Data） | JavaScript, Leaflet | - |
 
-| **Automation / Tooling (Replace Me)**<br/>`g5120u/automation-tooling` | 把重複工作自動化，提升團隊交付速度與品質 | GitHub Actions, Python, Shell | [Evidence](./generated/evidence-index.md) |
+| **git-DQ**<br/>`g5120u/git-DQ` | 讓任何開發資料夾變成 git 化的冒險世界 | JavaScript | - |
+
+| **saas-ai-builder-engine**<br/>`g5120u/saas-ai-builder-engine` | Enterprise-grade SaaS UI/UX/System Generator Engine（Powered by Cursor） | TypeScript | - |
+
+
+---
+
+## 🆕 近期更新專案（自動抓取）
+
+> 目的：你在其他 repo push 後，這裡會在下一次排程刷新時自動反映（不用手動維護）。
+
+
+| Repo | Last Push | Lang | Stars | Note |
+|---|---:|---|---:|---|
+
+| [g5120u](https://github.com/g5120u/g5120u) | `2026-01-08T05:48:14Z` | Python | 0 |  |
+
+| [saas-ai-builder-engine](https://github.com/g5120u/saas-ai-builder-engine) | `2026-01-07T15:15:01Z` | TypeScript | 1 | Enterprise-grade SaaS UI / UX / System Generator Engine Powered by Cursor × Rule-based AI Architecture  This is not a demo website generator. This repository implements a real SaaS Production Engine. |
+
+| [git-DQ](https://github.com/g5120u/git-DQ) | `2025-12-29T05:40:32Z` | JavaScript | 1 | 讓任何開發資料夾git化的冒險世界 |
+
+| [365GeoWork-map-showcase](https://github.com/g5120u/365GeoWork-map-showcase) | `2025-12-23T11:28:25Z` | JavaScript | 1 | 地圖任務展示模組（使用 Leaflet + Mock Data） |
+
+| [MSX](https://github.com/g5120u/MSX) | `2018-09-27T08:48:40Z` | - | 0 |  |
+
 
 
 ---
@@ -93,9 +111,11 @@ gantt
 
   section Projects
 
-  Core Product (Replace Me) :active, 2025-06, 2025-10
+  365GeoWork-map-showcase :active, 2025-12, 2025-12
 
-  Automation / Tooling (Replace Me) :active, 2025-12, 2026-01
+  git-DQ :active, 2025-12, 2025-12
+
+  saas-ai-builder-engine :active, 2026-01, 2026-01
 
 ```
 
@@ -136,7 +156,7 @@ Turn requirements into maintainable products; turn tech into delivered value
 - Engineering leverage (process, tooling, standards)
 
 
-> **Auto-updated** by GitHub Actions. Last updated: `2026-01-08 05:48 UTC`
+> **Auto-updated** by GitHub Actions. Last updated: `2026-01-08 14:29 (UTC+8)`
 
 ### 🧠 Skill Radar
 
