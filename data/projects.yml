@@ -1,0 +1,46 @@
+# 專案模組與時間線（用這份資料自動生成：Project Modules + Project Timeline）
+projects:
+  - key: core-product
+    name: "Core Product (Replace Me)"
+    repo: "g5120u/core-product"
+    status: "maintained"
+    period:
+      start: "2025-06"
+      end: "2025-10"
+    zh:
+      one_liner: "我主導/深度參與的核心產品（替換成你的專案）"
+      highlights:
+        - "性能：P95 -40%（含 benchmark 與回歸防線）"
+        - "可靠性：事故復盤 + 監控告警 + 復發預防"
+    en:
+      one_liner: "Core product I owned/led (replace with your project)"
+      highlights:
+        - "Performance: -40% P95 latency with regression guardrails"
+        - "Reliability: postmortem + observability + prevention"
+    tech: ["TypeScript", "Node.js", "PostgreSQL", "Docker"]
+    proof:
+      - label: "Case Study"
+        url: "./evidence/sample-case-study.md"
+
+  - key: automation
+    name: "Automation / Tooling (Replace Me)"
+    repo: "g5120u/automation-tooling"
+    status: "active"
+    period:
+      start: "2025-12"
+      end: ""
+    zh:
+      one_liner: "把重複工作自動化，提升團隊交付速度與品質"
+      highlights:
+        - "CI/CD：縮短 lead time、降低人為失誤"
+        - "品質：lint/test gate、release 標準化"
+    en:
+      one_liner: "Automation that improves delivery speed and quality"
+      highlights:
+        - "CI/CD: shorter lead time, fewer human errors"
+        - "Quality: lint/test gates, standardized releases"
+    tech: ["GitHub Actions", "Python", "Shell"]
+    proof:
+      - label: "Evidence"
+        url: "./generated/evidence-index.md"
+

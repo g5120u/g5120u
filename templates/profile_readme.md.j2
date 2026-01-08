@@ -1,0 +1,151 @@
+<!--
+AUTO-GENERATED. DO NOT EDIT README.md DIRECTLY.
+Source of truth:
+- data/profile.yml
+- data/skills.yml
+- data/projects.yml
+- evidence/*.md
+-->
+
+<div align="center">
+
+## 👑 {{ identity_zh.name }}｜{{ identity_zh.title }}
+
+**{{ identity_zh.tagline }}**
+
+{% if links.email %}📮 {{ links.email }}{% endif %}{% if links.website %} · 🌐 {{ links.website }}{% endif %}{% if links.linkedin %} · 💼 {{ links.linkedin }}{% endif %}
+
+</div>
+
+---
+
+## 🚀 我在做什麼（企業快速摘要）
+
+**{{ engine_zh.headline }}**
+
+{% for item in engine_zh.now_building %}
+- {{ item }}
+{% endfor %}
+
+> **自動更新**：本頁由 GitHub Actions 定期重建（你只要寫程式/寫證據/更新專案資料即可）。最後更新：`{{ generated_at }}`
+
+---
+
+## 🧠 你會的技能雷達（Skill Radar）
+
+<div align="center">
+
+**ZH**
+
+![Skill Radar ZH](./assets/skill-radar.zh.svg)
+
+**EN**
+
+![Skill Radar EN](./assets/skill-radar.en.svg)
+
+</div>
+
+> 雷達不是自嗨：每個技能都應該能在「實戰證據庫」找到對應的可驗證證據。
+
+---
+
+## 📦 你做過的專案模組（Project Modules）
+
+| Project | One-liner | Tech | Proof |
+|---|---|---|---|
+{% for p in projects %}
+| **{{ p.name }}**<br/>`{{ p.repo }}` | {{ p.zh.one_liner }} | {{ ", ".join(p.tech) }} | {% for pr in p.proof %}[{{ pr.label }}]({{ pr.url }}){% if not loop.last %}<br/>{% endif %}{% endfor %} |
+{% endfor %}
+
+---
+
+## 📈 真實開發證據（Real Dev Proof）
+
+<div align="center">
+
+![GitHub Stats](https://github-readme-stats.vercel.app/api?username={{ username }}&show_icons=true&rank_icon=github&hide_title=true)
+
+![Top Langs](https://github-readme-stats.vercel.app/api/top-langs/?username={{ username }}&layout=compact)
+
+![GitHub Streak](https://streak-stats.demolab.com?user={{ username }})
+
+![Trophy](https://github-profile-trophy.vercel.app/?username={{ username }}&theme=onedark&no-frame=true&row=1&column=7)
+
+![Activity Graph](https://github-readme-activity-graph.vercel.app/graph?username={{ username }}&theme=github-compact)
+
+</div>
+
+---
+
+## ⏳ 專案進化史（Project Timeline）
+
+```mermaid
+gantt
+  title Project Timeline
+  dateFormat  YYYY-MM
+  axisFormat  %Y-%m
+{% for line in mermaid_lines %}
+  {{ line }}
+{% endfor %}
+```
+
+---
+
+## 🧾 實戰證據庫（Evidence Vault）
+
+你可以把「做過什麼」升級成「**做過且可驗證**」：
+
+- 索引：[`generated/evidence-index.md`](./generated/evidence-index.md)
+{% if evidence_preview and evidence_preview|length > 0 %}
+- 最新 {{ evidence_preview|length }} 篇：
+{% for ev in evidence_preview %}
+  - **[{{ ev.title }}](./evidence/{{ ev.path }})** · `{{ ev.date }}` · {{ ev.tags_text }}
+{% endfor %}
+{% else %}
+- （目前尚無 evidence，先從 `evidence/sample-case-study.md` 複製一份開始）
+{% endif %}
+
+---
+
+<details>
+<summary><b>English version</b></summary>
+
+### 👑 Who I am
+
+**{{ identity_en.name }}｜{{ identity_en.title }}**
+
+{{ identity_en.tagline }}
+
+### 🚀 What I'm building
+
+**{{ engine_en.headline }}**
+
+{% for item in engine_en.now_building %}
+- {{ item }}
+{% endfor %}
+
+> **Auto-updated** by GitHub Actions. Last updated: `{{ generated_at }}`
+
+### 🧠 Skill Radar
+
+- ZH: `assets/skill-radar.zh.svg`
+- EN: `assets/skill-radar.en.svg`
+
+### 📦 Project Modules
+
+See the table above; each project should have proof links and evidence.
+
+### 📈 Real dev proof
+
+Stats, streak, trophies, and the activity graph above are live signals.
+
+### ⏳ Project timeline
+
+Generated from `data/projects.yml`.
+
+### 🧾 Evidence Vault
+
+Index: `generated/evidence-index.md`
+
+</details>
+

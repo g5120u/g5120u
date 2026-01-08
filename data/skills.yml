@@ -1,0 +1,36 @@
+# Skill Radar 資料：0~5 分（建議 6~10 個軸；越少越清楚）
+# 每一個 skill 可以綁 evidence tags，之後可做「技能 -> 證據」連結
+max_score: 5
+
+axes:
+  - key: backend
+    zh: "後端"
+    en: "Backend"
+    score: 4
+    evidence_tags: ["backend", "api", "performance"]
+  - key: frontend
+    zh: "前端"
+    en: "Frontend"
+    score: 3
+    evidence_tags: ["frontend", "ux"]
+  - key: devops
+    zh: "DevOps"
+    en: "DevOps"
+    score: 3
+    evidence_tags: ["devops", "ci-cd", "docker"]
+  - key: testing
+    zh: "測試"
+    en: "Testing"
+    score: 3
+    evidence_tags: ["testing", "qa"]
+  - key: architecture
+    zh: "架構"
+    en: "Architecture"
+    score: 4
+    evidence_tags: ["architecture", "design"]
+  - key: data
+    zh: "資料/分析"
+    en: "Data"
+    score: 2
+    evidence_tags: ["data", "sql"]
+

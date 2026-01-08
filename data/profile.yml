@@ -1,0 +1,36 @@
+# 你是誰 / 你在做什麼（可中英對照）
+username: "g5120u"
+
+identity:
+  zh:
+    name: "你的名字"
+    title: "軟體工程師 / 全端工程師 / 後端工程師（自訂）"
+    tagline: "把需求變成可維運的產品，把技術變成可交付的價值"
+    location: "Taiwan"
+  en:
+    name: "Your Name"
+    title: "Software Engineer / Full-stack / Backend (customize)"
+    tagline: "Turn requirements into maintainable products; turn tech into delivered value"
+    location: "Taiwan"
+
+links:
+  email: "you@example.com"
+  linkedin: ""
+  website: ""
+  resume_pdf: "" # 可留空；建議用 GitHub 取代 PDF
+
+# 這裡的 key 仍叫 engine（為了相容生成腳本），但「呈現」會是企業看得懂的履歷敘事
+engine:
+  zh:
+    headline: "我在做：把需求落地成可維運產品，並用可驗證證據呈現工程實力"
+    now_building:
+      - "持續交付：把功能做完，也把測試/監控/回滾路徑一起補齊"
+      - "可驗證成果：每個亮點都有 PR/Issue/Release/數據作證"
+      - "工程化沉澱：把一次解法變成可重用的流程/工具/規範"
+  en:
+    headline: "I build maintainable products and present my impact with verifiable proof"
+    now_building:
+      - "Continuous delivery with quality (tests, observability, rollback)"
+      - "Verifiable impact (PR/Issue/Release/metrics as proof)"
+      - "Engineering leverage (process, tooling, standards)"
+
