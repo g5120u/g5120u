@@ -31,7 +31,7 @@ Source of truth:
 - 工程化沉澱：把一次解法變成可重用的流程/工具/規範
 
 
-> **自動更新**：本頁由 GitHub Actions 定期重建（你只要寫程式/寫證據/更新專案資料即可）。最後更新：`2026-01-08 05:40 UTC`
+> **自動更新**：本頁由 GitHub Actions 定期重建（你只要寫程式/寫證據/更新專案資料即可）。最後更新：`2026-01-08 05:48 UTC`
 
 ---
 
@@ -136,7 +136,7 @@ Turn requirements into maintainable products; turn tech into delivered value
 - Engineering leverage (process, tooling, standards)
 
 
-> **Auto-updated** by GitHub Actions. Last updated: `2026-01-08 05:40 UTC`
+> **Auto-updated** by GitHub Actions. Last updated: `2026-01-08 05:48 UTC`
 
 ### 🧠 Skill Radar
 
