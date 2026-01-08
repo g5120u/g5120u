@@ -35,13 +35,7 @@ Source of truth:
 
 <div align="center">
 
-**ZH**
-
-![Skill Radar ZH](./assets/skill-radar.zh.svg)
-
-**EN**
-
-![Skill Radar EN](./assets/skill-radar.en.svg)
+![Skill Radar](./assets/skill-radar.svg)
 
 </div>
 
@@ -54,8 +48,24 @@ Source of truth:
 | Project | One-liner | Tech | Proof |
 |---|---|---|---|
 {% for p in projects %}
-| **{{ p.name }}**<br/>`{{ p.repo }}` | {{ p.zh.one_liner }} | {{ ", ".join(p.tech) }} | {% for pr in p.proof %}[{{ pr.label }}]({{ pr.url }}){% if not loop.last %}<br/>{% endif %}{% endfor %} |
+| **{{ p.name }}**<br/>`{{ p.repo }}` | {{ (p.zh.one_liner if p.zh and p.zh.one_liner else "-") }} | {{ (", ".join(p.tech) if p.tech else "-") }} | {% if p.proof %}{% for pr in p.proof %}[{{ pr.label }}]({{ pr.url }}){% if not loop.last %}<br/>{% endif %}{% endfor %}{% else %}-{% endif %} |
 {% endfor %}
+
+---
+
+## 🆕 近期更新專案（自動抓取）
+
+> 目的：你在其他 repo push 後，這裡會在下一次排程刷新時自動反映（不用手動維護）。
+
+{% if recent_repos and recent_repos|length > 0 %}
+| Repo | Last Push | Lang | Stars | Note |
+|---|---:|---|---:|---|
+{% for r in recent_repos %}
+| [{{ r.name }}]({{ r.html_url }}) | `{{ r.pushed_at }}` | {{ r.language if r.language else "-" }} | {{ r.stargazers_count }} | {{ r.description if r.description else "" }} |
+{% endfor %}
+{% else %}
+（尚未取得近期更新 repo；通常是 GitHub API rate limit 或網路暫時性問題。）
+{% endif %}
 
 ---
 

@@ -1,6 +1,6 @@
 from __future__ import annotations
 
-from datetime import datetime, timezone
+from datetime import datetime, timedelta, timezone
 from pathlib import Path
 from typing import Any
 
@@ -8,6 +8,7 @@ from jinja2 import Environment, FileSystemLoader
 
 from ._lib import ensure_dir, read_yaml, repo_root
 from .generate_skill_radar import generate as generate_skill_radar
+from .github_recent import fetch_recent_repos, fetch_repo_month_range
 from .index_evidence import Evidence, generate as index_evidence
 
 
@@ -36,9 +37,22 @@ def build_mermaid_lines(projects: list[dict[str, Any]]) -> list[str]:
     for p in projects:
         name = str(p.get("name", "")).strip() or str(p.get("key", "project"))
         status = _project_status_to_gantt(str(p.get("status", "")))
-        period = p.get("period", {}) if isinstance(p.get("period"), dict) else {}
-        start = str(period.get("start", "")).strip() or now
-        end = str(period.get("end", "")).strip() or now
+        repo = str(p.get("repo", "")).strip()
+
+        # Prefer real dates from GitHub (created_at -> pushed_at)
+        start_end = None
+        if repo and "/" in repo:
+            try:
+                start_end = fetch_repo_month_range(repo)
+            except Exception:
+                start_end = None
+
+        if start_end:
+            start, end = start_end
+        else:
+            period = p.get("period", {}) if isinstance(p.get("period"), dict) else {}
+            start = str(period.get("start", "")).strip() or now
+            end = str(period.get("end", "")).strip() or now
         # Mermaid gantt: "Task :active, 2025-01, 2025-03"
         lines.append(f"{name} :{status}, {start}, {end}")
     return lines
@@ -68,6 +82,14 @@ def load_data() -> dict[str, Any]:
 
     mermaid_lines = build_mermaid_lines(projects)
 
+    # Recent repos (auto-updated when you push elsewhere; refreshed by schedule)
+    recent_repos = []
+    recent_repos_error = ""
+    try:
+        recent_repos = fetch_recent_repos(username, limit=6)
+    except Exception as e:
+        recent_repos_error = str(e)
+
     return {
         "username": username,
         "identity_zh": identity_zh,
@@ -78,6 +100,8 @@ def load_data() -> dict[str, Any]:
         "projects": projects,
         "skills": skills,
         "mermaid_lines": mermaid_lines,
+        "recent_repos": recent_repos,
+        "recent_repos_error": recent_repos_error,
     }
 
 
@@ -102,7 +126,11 @@ def build() -> Path:
     evidence_items: list[Evidence] = index_evidence()
 
     context = load_data()
-    context["generated_at"] = datetime.now(timezone.utc).strftime("%Y-%m-%d %H:%M UTC")
+
+    # Display in Asia/Taipei (UTC+8) to match what you see day-to-day.
+    tz_tw = timezone(timedelta(hours=8))
+    now_tw = datetime.now(timezone.utc).astimezone(tz_tw)
+    context["generated_at"] = now_tw.strftime("%Y-%m-%d %H:%M (UTC+8)")
     context["evidence_preview"] = evidence_items[:5]
 
     readme = render_readme(context)

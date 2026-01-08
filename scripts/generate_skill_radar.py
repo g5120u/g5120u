@@ -143,34 +143,31 @@ def generate() -> tuple[Path, Path]:
     if not isinstance(axes, list) or len(axes) == 0:
         raise ValueError("data/skills.yml must have a non-empty 'axes' list")
 
-    zh_axes: list[RadarAxis] = []
-    en_axes: list[RadarAxis] = []
+    bi_axes: list[RadarAxis] = []
     for a in axes:
         if not isinstance(a, dict):
             continue
         score = float(a.get("score", 0))
-        zh_axes.append(RadarAxis(label=str(a.get("zh", a.get("key", ""))), score=score))
-        en_axes.append(RadarAxis(label=str(a.get("en", a.get("key", ""))), score=score))
+        zh = str(a.get("zh", a.get("key", ""))).strip()
+        en = str(a.get("en", a.get("key", ""))).strip()
+        label = " ".join([x for x in [zh, en] if x])
+        bi_axes.append(RadarAxis(label=label or str(a.get("key", "")), score=score))
 
     assets = root / "assets"
     ensure_dir(assets)
 
-    zh_path = assets / "skill-radar.zh.svg"
-    en_path = assets / "skill-radar.en.svg"
+    out_path = assets / "skill-radar.svg"
 
-    zh_svg = build_radar_svg(title="Skill Radar（技能雷達）", axes=zh_axes, max_score=max_score)
-    en_svg = build_radar_svg(title="Skill Radar", axes=en_axes, max_score=max_score)
+    svg = build_radar_svg(title="Skill Radar | 技能雷達", axes=bi_axes, max_score=max_score)
 
-    zh_path.write_text(zh_svg, encoding="utf-8")
-    en_path.write_text(en_svg, encoding="utf-8")
+    out_path.write_text(svg, encoding="utf-8")
 
-    return zh_path, en_path
+    return out_path, out_path
 
 
 def main() -> None:
-    zh, en = generate()
-    print(f"Generated: {zh}")
-    print(f"Generated: {en}")
+    out, _ = generate()
+    print(f"Generated: {out}")
 
 
 if __name__ == "__main__":

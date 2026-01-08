@@ -1,46 +1,32 @@
 # 專案模組與時間線（用這份資料自動生成：Project Modules + Project Timeline）
 projects:
-  - key: core-product
-    name: "Core Product (Replace Me)"
-    repo: "g5120u/core-product"
-    status: "maintained"
-    period:
-      start: "2025-06"
-      end: "2025-10"
-    zh:
-      one_liner: "我主導/深度參與的核心產品（替換成你的專案）"
-      highlights:
-        - "性能：P95 -40%（含 benchmark 與回歸防線）"
-        - "可靠性：事故復盤 + 監控告警 + 復發預防"
-    en:
-      one_liner: "Core product I owned/led (replace with your project)"
-      highlights:
-        - "Performance: -40% P95 latency with regression guardrails"
-        - "Reliability: postmortem + observability + prevention"
-    tech: ["TypeScript", "Node.js", "PostgreSQL", "Docker"]
-    proof:
-      - label: "Case Study"
-        url: "./evidence/sample-case-study.md"
-
-  - key: automation
-    name: "Automation / Tooling (Replace Me)"
-    repo: "g5120u/automation-tooling"
+  - key: map-showcase
+    name: "365GeoWork-map-showcase"
+    repo: "g5120u/365GeoWork-map-showcase"
     status: "active"
-    period:
-      start: "2025-12"
-      end: ""
     zh:
-      one_liner: "把重複工作自動化，提升團隊交付速度與品質"
-      highlights:
-        - "CI/CD：縮短 lead time、降低人為失誤"
-        - "品質：lint/test gate、release 標準化"
+      one_liner: "地圖任務展示模組（使用 Leaflet + Mock Data）"
     en:
-      one_liner: "Automation that improves delivery speed and quality"
-      highlights:
-        - "CI/CD: shorter lead time, fewer human errors"
-        - "Quality: lint/test gates, standardized releases"
-    tech: ["GitHub Actions", "Python", "Shell"]
-    proof:
-      - label: "Evidence"
-        url: "./generated/evidence-index.md"
+      one_liner: "Map mission showcase module (Leaflet + mock data)"
+    tech: ["JavaScript", "Leaflet"]
+
+  - key: git-dq
+    name: "git-DQ"
+    repo: "g5120u/git-DQ"
+    status: "active"
+    zh:
+      one_liner: "讓任何開發資料夾變成 git 化的冒險世界"
+    en:
+      one_liner: "Turn any dev folder into a git-powered adventure world"
+    tech: ["JavaScript"]
+
+  - key: saas-ai-builder-engine
+    name: "saas-ai-builder-engine"
+    repo: "g5120u/saas-ai-builder-engine"
+    status: "active"
+    zh:
+      one_liner: "Enterprise-grade SaaS UI/UX/System Generator Engine（Powered by Cursor）"
+    en:
+      one_liner: "Enterprise-grade SaaS UI/UX/System Generator Engine (Powered by Cursor)"
+    tech: ["TypeScript"]
 
