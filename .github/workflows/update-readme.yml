@@ -1,4 +1,4 @@
-name: Update Profile Engine
+name: Update Profile README
 
 on:
   push:
@@ -36,11 +36,11 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add README.md assets generated
+          git add README.md assets
           if git diff --cached --quiet; then
             echo "No changes to commit."
             exit 0
           fi
-          git commit -m "chore: auto-update profile engine"
+          git commit -m "chore: auto-update profile readme"
           git push
 

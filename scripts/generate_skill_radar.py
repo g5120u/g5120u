@@ -9,7 +9,8 @@ from ._lib import clamp, ensure_dir, read_yaml, repo_root
 
 @dataclass(frozen=True)
 class RadarAxis:
-    label: str
+    zh: str
+    en: str
     score: float
 
 
@@ -38,7 +39,7 @@ def build_radar_svg(
     axes: list[RadarAxis],
     max_score: float,
     size: int = 720,
-    padding: int = 90,
+    padding: int = 120,
 ) -> str:
     if len(axes) < 3:
         raise ValueError("Radar requires at least 3 axes")
@@ -67,8 +68,10 @@ def build_radar_svg(
         y2 = cy + radius * math.sin(a)
         axis_lines.append((cx, cy, x2, y2))
 
-        lx = cx + (radius + 26) * math.cos(a)
-        ly = cy + (radius + 26) * math.sin(a)
+        # Keep labels inside viewbox to avoid being cut on GitHub.
+        label_r = radius + 12
+        lx = cx + label_r * math.cos(a)
+        ly = cy + label_r * math.sin(a)
 
         # text-anchor based on angle
         ca = math.cos(a)
@@ -78,7 +81,12 @@ def build_radar_svg(
         elif ca < -0.35:
             anchor = "end"
 
-        labels.append((lx, ly, anchor, _svg_escape(ax.label)))
+        # Clamp label positions to safe margins (helps long text)
+        margin = 16.0
+        lx = clamp(lx, margin, w - margin)
+        ly = clamp(ly, 96.0, h - 56.0)  # reserve space for 2 lines
+
+        labels.append((lx, ly, anchor, _svg_escape(ax.zh), _svg_escape(ax.en)))
 
     # Value polygon
     value_pts = []
@@ -128,8 +136,13 @@ def build_radar_svg(
     parts.append(f'<polygon class="value" points="{value_poly}"/>')
 
     # Labels
-    for x, y, anchor, label in labels:
-        parts.append(f'<text x="{x:.2f}" y="{y:.2f}" text-anchor="{anchor}" font-size="16" font-weight="600">{label}</text>')
+    for x, y, anchor, zh, en in labels:
+        if zh:
+            parts.append(f'<text x="{x:.2f}" y="{y:.2f}" text-anchor="{anchor}" font-size="14" font-weight="700">{zh}</text>')
+        if en:
+            parts.append(
+                f'<text x="{x:.2f}" y="{(y + 16):.2f}" text-anchor="{anchor}" class="muted" font-size="12" font-weight="600">{en}</text>'
+            )
 
     parts.append("</svg>")
     return "\n".join(parts) + "\n"
@@ -150,8 +163,7 @@ def generate() -> tuple[Path, Path]:
         score = float(a.get("score", 0))
         zh = str(a.get("zh", a.get("key", ""))).strip()
         en = str(a.get("en", a.get("key", ""))).strip()
-        label = " ".join([x for x in [zh, en] if x])
-        bi_axes.append(RadarAxis(label=label or str(a.get("key", "")), score=score))
+        bi_axes.append(RadarAxis(zh=zh, en=en, score=score))
 
     assets = root / "assets"
     ensure_dir(assets)

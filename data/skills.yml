@@ -1,5 +1,6 @@
 # Skill Radar 資料：0~5 分（建議 6~10 個軸；越少越清楚）
-# 每一個 skill 可以綁 evidence tags，之後可做「技能 -> 證據」連結
+# 分數是「自評」：不會自動讀你其他 repo 的程式碼去推算能力值（那很容易誤判）。
+# 建議用真實 repo / PR / issue / release / demo 當佐證，讓分數可被理解與信任。
 max_score: 5
 
 axes:
@@ -7,7 +8,7 @@ axes:
     zh: "後端"
     en: "Backend"
     score: 4
-    evidence_tags: ["backend", "api", "performance"]
+    evidence_tags: ["backend", "api", "performance"] # 可留著當你自己的標籤（目前不會顯示在首頁）
   - key: frontend
     zh: "前端"
     en: "Frontend"

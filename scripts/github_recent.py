@@ -33,6 +33,15 @@ class RecentRepo:
     def name(self) -> str:
         return self.full_name.split("/")[-1]
 
+    @property
+    def pushed_date(self) -> str:
+        # ISO 8601 -> YYYY-MM-DD (keep UTC date)
+        try:
+            dt = datetime.fromisoformat(self.pushed_at.replace("Z", "+00:00"))
+            return dt.strftime("%Y-%m-%d")
+        except Exception:
+            return self.pushed_at
+
 
 def fetch_recent_repos(username: str, *, limit: int = 6, include_forks: bool = False) -> list[RecentRepo]:
     # Public endpoint; rate-limited but fine for a profile README job.

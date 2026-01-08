@@ -9,7 +9,6 @@ from jinja2 import Environment, FileSystemLoader
 from ._lib import ensure_dir, read_yaml, repo_root
 from .generate_skill_radar import generate as generate_skill_radar
 from .github_recent import fetch_recent_repos, fetch_repo_month_range
-from .index_evidence import Evidence, generate as index_evidence
 
 
 def _month_now_utc() -> str:
@@ -58,6 +57,44 @@ def build_mermaid_lines(projects: list[dict[str, Any]]) -> list[str]:
     return lines
 
 
+def build_project_timeline(projects: list[dict[str, Any]]) -> list[dict[str, str]]:
+    """
+    Timeline shown on README (avoid Mermaid viewer overlay on GitHub).
+    Prefer real timestamps from GitHub (created_at -> pushed_at month), fallback to YAML period.
+    """
+    now = _month_now_utc()
+    rows: list[dict[str, str]] = []
+    for p in projects:
+        name = str(p.get("name", "")).strip() or str(p.get("key", "project"))
+        repo = str(p.get("repo", "")).strip()
+        status = str(p.get("status", "")).strip() or "active"
+
+        start_end = None
+        if repo and "/" in repo:
+            try:
+                start_end = fetch_repo_month_range(repo)
+            except Exception:
+                start_end = None
+
+        if start_end:
+            start, end = start_end
+        else:
+            period = p.get("period", {}) if isinstance(p.get("period"), dict) else {}
+            start = str(period.get("start", "")).strip() or now
+            end = str(period.get("end", "")).strip() or now
+
+        rows.append(
+            {
+                "name": name,
+                "repo": repo,
+                "status": status,
+                "start": start,
+                "end": end,
+            }
+        )
+    return rows
+
+
 def load_data() -> dict[str, Any]:
     root = repo_root()
     profile = read_yaml(root / "data" / "profile.yml")
@@ -81,6 +118,7 @@ def load_data() -> dict[str, Any]:
         projects = []
 
     mermaid_lines = build_mermaid_lines(projects)
+    project_timeline = build_project_timeline(projects)
 
     # Recent repos (auto-updated when you push elsewhere; refreshed by schedule)
     recent_repos = []
@@ -100,6 +138,7 @@ def load_data() -> dict[str, Any]:
         "projects": projects,
         "skills": skills,
         "mermaid_lines": mermaid_lines,
+        "project_timeline": project_timeline,
         "recent_repos": recent_repos,
         "recent_repos_error": recent_repos_error,
     }
@@ -119,11 +158,9 @@ def render_readme(context: dict[str, Any]) -> str:
 def build() -> Path:
     root = repo_root()
     ensure_dir(root / "assets")
-    ensure_dir(root / "generated")
 
     # Generate assets / indexes
     generate_skill_radar()
-    evidence_items: list[Evidence] = index_evidence()
 
     context = load_data()
 
@@ -131,8 +168,6 @@ def build() -> Path:
     tz_tw = timezone(timedelta(hours=8))
     now_tw = datetime.now(timezone.utc).astimezone(tz_tw)
     context["generated_at"] = now_tw.strftime("%Y-%m-%d %H:%M (UTC+8)")
-    context["evidence_preview"] = evidence_items[:5]
-
     readme = render_readme(context)
     out = root / "README.md"
     out.write_text(readme, encoding="utf-8")

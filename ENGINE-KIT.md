@@ -8,7 +8,7 @@
 - **GitHub Profile**：你是誰（`<username>/<username>` 的 `README.md`）
 - **GitHub Engine**：你會什麼 / 你做過什麼 / 你強在哪（由資料與證據自動生成）
 
-重點是：**你不用本機跑任何東西**。你只要更新 `data/*.yml` 與 `evidence/*.md` 並 push，GitHub Actions 會自動生成首頁與資產。
+重點是：**你不用本機跑任何東西**。你只要更新 `data/*.yml` 並 push，GitHub Actions 會自動生成首頁與資產。
 
 ## 你會得到的 Profile 首頁區塊
 
@@ -58,26 +58,10 @@ generated/                            # 生成後 markdown（索引/片段）
 - **工程化**：CI/CD、lint/test、release、版本治理、可觀測性
 - **架構決策**：ADR（為何選 A 不選 B）、風險、折衷
 
-## Evidence front matter 規格（建議照這樣寫）
-
-每篇證據檔放在 `evidence/*.md`，檔案開頭用 YAML front matter：
-
-```yaml
----
-title: "案例研究：XXX"
-date: "2026-01-08"          # YYYY-MM-DD
-tags: ["backend", "api"]    # 之後可以用來對應技能雷達
-repo: "yourname/your-repo"  # 可填可不填
----
-```
-
-模板可以直接複製：`evidence/_template.case-study.md`
-
 ## 常見客製（讓企業真的「嚇到」）
 
-- **把技能變成證據**：每個技能至少 2 篇 evidence（例如：性能 / 事故 / 架構決策 / 測試防線）
 - **把專案變成故事**：每個專案都要有「一行總結 + 3 個亮點 + 1 個 proof 連結」
-- **把持續性變成訊號**：週更（小也沒關係）+ releases + evidence，活動圖/連續開發自然會強
+- **把持續性變成訊號**：週更（小也沒關係）+ releases，活動圖/連續開發自然會強
 
 ## FAQ
 

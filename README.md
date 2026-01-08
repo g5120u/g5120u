@@ -4,7 +4,6 @@ Source of truth:
 - data/profile.yml
 - data/skills.yml
 - data/projects.yml
-- evidence/*.md
 -->
 
 <div align="center">
@@ -31,7 +30,7 @@ Source of truth:
 - 工程化沉澱：把一次解法變成可重用的流程/工具/規範
 
 
-> **自動更新**：本頁由 GitHub Actions 定期重建（你只要寫程式/寫證據/更新專案資料即可）。最後更新：`2026-01-08 14:30 (UTC+8)`
+> **自動更新**：本頁由 GitHub Actions 定期重建（你只要寫程式/更新專案資料即可）。最後更新：`2026-01-08 14:52 (UTC+8)`
 
 ---
 
@@ -43,7 +42,7 @@ Source of truth:
 
 </div>
 
-> 雷達不是自嗨：每個技能都應該能在「實戰證據庫」找到對應的可驗證證據。
+> 分數來源：你在 `data/skills.yml` 設定的自評（0–5）。它不會自動讀你的程式碼「推算能力」，但會用你的真實 repo 活動來呈現持續性與產出。
 
 ---
 
@@ -69,15 +68,15 @@ Source of truth:
 | Repo | Last Push | Lang | Stars | Note |
 |---|---:|---|---:|---|
 
-| [g5120u](https://github.com/g5120u/g5120u) | `2026-01-08T06:30:21Z` | Python | 0 |  |
+| [g5120u](https://github.com/g5120u/g5120u) | `2026-01-08` | Python | 0 |  |
 
-| [saas-ai-builder-engine](https://github.com/g5120u/saas-ai-builder-engine) | `2026-01-07T15:15:01Z` | TypeScript | 1 | Enterprise-grade SaaS UI / UX / System Generator Engine Powered by Cursor × Rule-based AI Architecture  This is not a demo website generator. This repository implements a real SaaS Production Engine. |
+| [saas-ai-builder-engine](https://github.com/g5120u/saas-ai-builder-engine) | `2026-01-07` | TypeScript | 1 | Enterprise-grade SaaS UI / UX / System Generator Engine Powered by Cursor × Rule-based AI Architecture  This is not a demo website generator. This repository implements a real SaaS Production Engine. |
 
-| [git-DQ](https://github.com/g5120u/git-DQ) | `2025-12-29T05:40:32Z` | JavaScript | 1 | 讓任何開發資料夾git化的冒險世界 |
+| [git-DQ](https://github.com/g5120u/git-DQ) | `2025-12-29` | JavaScript | 1 | 讓任何開發資料夾git化的冒險世界 |
 
-| [365GeoWork-map-showcase](https://github.com/g5120u/365GeoWork-map-showcase) | `2025-12-23T11:28:25Z` | JavaScript | 1 | 地圖任務展示模組（使用 Leaflet + Mock Data） |
+| [365GeoWork-map-showcase](https://github.com/g5120u/365GeoWork-map-showcase) | `2025-12-23` | JavaScript | 1 | 地圖任務展示模組（使用 Leaflet + Mock Data） |
 
-| [MSX](https://github.com/g5120u/MSX) | `2018-09-27T08:48:40Z` | - | 0 |  |
+| [MSX](https://github.com/g5120u/MSX) | `2018-09-27` | - | 0 |  |
 
 
 
@@ -87,15 +86,30 @@ Source of truth:
 
 <div align="center">
 
-![GitHub Stats](https://github-readme-stats.vercel.app/api?username=g5120u&show_icons=true&rank_icon=github&hide_title=true)
+<a href="https://github.com/g5120u">
+  <img alt="GitHub Stats" referrerpolicy="no-referrer" loading="lazy"
+       src="https://github-readme-stats.vercel.app/api?username=g5120u&show_icons=true&rank_icon=github&hide_title=true&theme=github_dark&cache_seconds=21600" />
+</a>
 
-![Top Langs](https://github-readme-stats.vercel.app/api/top-langs/?username=g5120u&layout=compact)
+<a href="https://github.com/g5120u">
+  <img alt="Top Languages" referrerpolicy="no-referrer" loading="lazy"
+       src="https://github-readme-stats.vercel.app/api/top-langs/?username=g5120u&layout=compact&theme=github_dark&cache_seconds=21600" />
+</a>
 
-![GitHub Streak](https://streak-stats.demolab.com?user=g5120u)
+<a href="https://github.com/g5120u">
+  <img alt="GitHub Streak" referrerpolicy="no-referrer" loading="lazy"
+       src="https://streak-stats.demolab.com?user=g5120u&theme=github-dark-blue&hide_border=true&date_format=%5BY.%5Dn.j" />
+</a>
 
-![Trophy](https://github-profile-trophy.vercel.app/?username=g5120u&theme=onedark&no-frame=true&row=1&column=7)
+<a href="https://github.com/g5120u">
+  <img alt="Trophy" referrerpolicy="no-referrer" loading="lazy"
+       src="https://github-profile-trophy.vercel.app/?username=g5120u&theme=onedark&no-frame=true&row=1&column=7&margin-w=6&margin-h=6" />
+</a>
 
-![Activity Graph](https://github-readme-activity-graph.vercel.app/graph?username=g5120u&theme=github-compact)
+<a href="https://github.com/g5120u">
+  <img alt="Activity Graph" referrerpolicy="no-referrer" loading="lazy"
+       src="https://github-readme-activity-graph.vercel.app/graph?username=g5120u&theme=github-compact&hide_border=true" />
+</a>
 
 </div>
 
@@ -103,81 +117,14 @@ Source of truth:
 
 ## ⏳ 專案進化史（Project Timeline）
 
-```mermaid
-gantt
-  title Project Timeline
-  dateFormat  YYYY-MM
-  axisFormat  %Y-%m
+| Project | Repo | Range (YYYY-MM) | Status |
+|---|---|---|---|
 
-  section Projects
+| **365GeoWork-map-showcase** | `g5120u/365GeoWork-map-showcase` | 2025-12 → 2025-12 | active |
 
-  365GeoWork-map-showcase :active, 2025-12, 2025-12
+| **git-DQ** | `g5120u/git-DQ` | 2025-12 → 2025-12 | active |
 
-  git-DQ :active, 2025-12, 2025-12
-
-  saas-ai-builder-engine :active, 2026-01, 2026-01
-
-```
-
----
-
-## 🧾 實戰證據庫（Evidence Vault）
-
-你可以把「做過什麼」升級成「**做過且可驗證**」：
-
-- 索引：[`generated/evidence-index.md`](./generated/evidence-index.md)
-
-- 最新 1 篇：
-
-  - **[案例研究：把一次效能瓶頸變成可重現的性能防線](./evidence/sample-case-study.md)** · `2026-01-01` · performance, backend, observability
-
+| **saas-ai-builder-engine** | `g5120u/saas-ai-builder-engine` | 2026-01 → 2026-01 | active |
 
 
 ---
-
-<details>
-<summary><b>English version</b></summary>
-
-### 👑 Who I am
-
-**Your Name｜Software Engineer / Full-stack / Backend (customize)**
-
-Turn requirements into maintainable products; turn tech into delivered value
-
-### 🚀 What I'm building
-
-**I build maintainable products and present my impact with verifiable proof**
-
-
-- Continuous delivery with quality (tests, observability, rollback)
-
-- Verifiable impact (PR/Issue/Release/metrics as proof)
-
-- Engineering leverage (process, tooling, standards)
-
-
-> **Auto-updated** by GitHub Actions. Last updated: `2026-01-08 14:30 (UTC+8)`
-
-### 🧠 Skill Radar
-
-- ZH: `assets/skill-radar.zh.svg`
-- EN: `assets/skill-radar.en.svg`
-
-### 📦 Project Modules
-
-See the table above; each project should have proof links and evidence.
-
-### 📈 Real dev proof
-
-Stats, streak, trophies, and the activity graph above are live signals.
-
-### ⏳ Project timeline
-
-Generated from `data/projects.yml`.
-
-### 🧾 Evidence Vault
-
-Index: `generated/evidence-index.md`
-
-</details>
-
