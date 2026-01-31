@@ -30,7 +30,7 @@ Source of truth:
 - 工程化沉澱：把一次解法變成可重用的流程/工具/規範
 
 
-> **自動更新**：本頁由 GitHub Actions 定期重建（你只要寫程式/更新專案資料即可）。最後更新：`2026-01-31 03:02 (UTC+8)`
+> **自動更新**：本頁由 GitHub Actions 定期重建（你只要寫程式/更新專案資料即可）。最後更新：`2026-01-31 10:47 (UTC+8)`
 
 ---
 
@@ -65,19 +65,7 @@ Source of truth:
 > 目的：你在其他 repo push 後，這裡會在下一次排程刷新時自動反映（不用手動維護）。
 
 
-| Repo | Last Push | Lang | Stars | Note |
-|---|---:|---|---:|---|
-
-| [g5120u](https://github.com/g5120u/g5120u) | `2026-01-30` | Python | 0 |  |
-
-| [saas-ai-builder-engine](https://github.com/g5120u/saas-ai-builder-engine) | `2026-01-07` | TypeScript | 1 | Enterprise-grade SaaS UI / UX / System Generator Engine Powered by Cursor × Rule-based AI Architecture  This is not a demo website generator. This repository implements a real SaaS Production Engine. |
-
-| [git-DQ](https://github.com/g5120u/git-DQ) | `2025-12-29` | JavaScript | 1 | 讓任何開發資料夾git化的冒險世界 |
-
-| [365GeoWork-map-showcase](https://github.com/g5120u/365GeoWork-map-showcase) | `2025-12-23` | JavaScript | 1 | 地圖任務展示模組（使用 Leaflet + Mock Data） |
-
-| [MSX](https://github.com/g5120u/MSX) | `2018-09-27` | - | 0 |  |
-
+（尚未取得近期更新 repo；通常是 GitHub API rate limit 或網路暫時性問題。）
 
 
 ---
@@ -120,9 +108,9 @@ Source of truth:
 | Project | Repo | Range (YYYY-MM) | Status |
 |---|---|---|---|
 
-| **365GeoWork-map-showcase** | `g5120u/365GeoWork-map-showcase` | 2025-12 → 2025-12 | active |
+| **365GeoWork-map-showcase** | `g5120u/365GeoWork-map-showcase` | 2026-01 → 2026-01 | active |
 
-| **git-DQ** | `g5120u/git-DQ` | 2025-12 → 2025-12 | active |
+| **git-DQ** | `g5120u/git-DQ` | 2026-01 → 2026-01 | active |
 
 | **saas-ai-builder-engine** | `g5120u/saas-ai-builder-engine` | 2026-01 → 2026-01 | active |
 
