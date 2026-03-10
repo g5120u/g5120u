@@ -30,7 +30,7 @@ Source of truth:
 - 工程化沉澱：把一次解法變成可重用的流程/工具/規範
 
 
-> **自動更新**：本頁由 GitHub Actions 定期重建（你只要寫程式/更新專案資料即可）。最後更新：`2026-03-10 21:38 (UTC+8)`
+> **自動更新**：本頁由 GitHub Actions 定期重建（你只要寫程式/更新專案資料即可）。最後更新：`2026-03-11 03:09 (UTC+8)`
 
 ---
 
@@ -74,7 +74,7 @@ Source of truth:
 
 | [git-DQ](https://github.com/g5120u/git-DQ) | `2025-12-29` | JavaScript | 1 | 讓任何開發資料夾git化的冒險世界 |
 
-| [365GeoWork-map-showcase](https://github.com/g5120u/365GeoWork-map-showcase) | `2025-12-23` | JavaScript | 1 | 地圖任務展示模組（使用 Leaflet + Mock Data） |
+| [365GeoWork-map-showcase](https://github.com/g5120u/365GeoWork-map-showcase) | `2025-12-23` | JavaScript | 2 | 地圖任務展示模組（使用 Leaflet + Mock Data） |
 
 | [MSX](https://github.com/g5120u/MSX) | `2018-09-27` | - | 0 |  |
 
