@@ -8,7 +8,7 @@ Source of truth:
 
 <div align="center">
 
-## 👑 {{ identity_zh.name }}｜{{ identity_zh.title }}
+## {{ identity_zh.name }} | {{ identity_zh.title }}
 
 **{{ identity_zh.tagline }}**
 
@@ -18,7 +18,7 @@ Source of truth:
 
 ---
 
-## 🚀 我在做什麼（企業快速摘要）
+## 🚀 目前方向
 
 **{{ engine_zh.headline }}**
 
@@ -26,11 +26,11 @@ Source of truth:
 - {{ item }}
 {% endfor %}
 
-> **自動更新**：本頁由 GitHub Actions 定期重建（你只要寫程式/更新專案資料即可）。最後更新：`{{ generated_at }}`
+> 本頁由資料檔產生，GitHub Actions 只負責定期整理近期公開 repo 動態。
 
 ---
 
-## 🧠 你會的技能雷達（Skill Radar）
+## 🧠 技能雷達（Skill Radar）
 
 <div align="center">
 
@@ -42,13 +42,24 @@ Source of truth:
 
 ---
 
-## 📦 你做過的專案模組（Project Modules）
+## 📦 精選作品（Selected Projects）
 
 | Project | One-liner | Tech | Proof |
 |---|---|---|---|
-{% for p in projects %}
+{% for p in selected_projects %}
 | **{{ p.name }}**<br/>`{{ p.repo }}` | {{ (p.zh.one_liner if p.zh and p.zh.one_liner else "-") }} | {{ (", ".join(p.tech) if p.tech else "-") }} | {% if p.proof %}{% for pr in p.proof %}[{{ pr.label }}]({{ pr.url }}){% if not loop.last %}<br/>{% endif %}{% endfor %}{% else %}-{% endif %} |
 {% endfor %}
+
+{% if lab_projects and lab_projects|length > 0 %}
+## 🧪 實驗室 / 練習作品區（Labs）
+
+| Project | What it explores | Tech |
+|---|---|---|
+{% for p in lab_projects %}
+| **{{ p.name }}**<br/>`{{ p.repo }}` | {{ (p.zh.one_liner if p.zh and p.zh.one_liner else "-") }} | {{ (", ".join(p.tech) if p.tech else "-") }} |
+{% endfor %}
+
+{% endif %}
 
 ---
 
@@ -68,7 +79,7 @@ Source of truth:
 
 ---
 
-## 📈 真實開發證據（Real Dev Proof）
+## 📈 開發紀錄（Development Proof）
 
 <div align="center">
 

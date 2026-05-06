@@ -8,33 +8,33 @@ Source of truth:
 
 <div align="center">
 
-## 👑 你的名字｜軟體工程師 / 全端工程師 / 後端工程師（自訂）
+## g5120u | Software Builder / Full-stack Learner
 
-**把需求變成可維運的產品，把技術變成可交付的價值**
+**把想法整理成可執行的產品原型，持續累積可驗證的工程作品**
 
-📮 you@example.com
+
 
 </div>
 
 ---
 
-## 🚀 我在做什麼（企業快速摘要）
+## 🚀 目前方向
 
-**我在做：把需求落地成可維運產品，並用可驗證證據呈現工程實力**
-
-
-- 持續交付：把功能做完，也把測試/監控/回滾路徑一起補齊
-
-- 可驗證成果：每個亮點都有 PR/Issue/Release/數據作證
-
-- 工程化沉澱：把一次解法變成可重用的流程/工具/規範
+**我正在累積產品開發、前後端整合與自動化流程的實作經驗**
 
 
-> **自動更新**：本頁由 GitHub Actions 定期重建（你只要寫程式/更新專案資料即可）。最後更新：`2026-05-06 12:06 (UTC+8)`
+- 產品原型：把想法拆成畫面、資料、流程與可操作功能
+
+- 工程實作：用前端、後端、地圖、工具與自動化把作品做出來
+
+- 持續整理：把練習專案、工具實驗與實作紀錄收斂成可閱讀的作品集
+
+
+> 本頁由資料檔產生，GitHub Actions 只負責定期整理近期公開 repo 動態。
 
 ---
 
-## 🧠 你會的技能雷達（Skill Radar）
+## 🧠 技能雷達（Skill Radar）
 
 <div align="center">
 
@@ -46,16 +46,25 @@ Source of truth:
 
 ---
 
-## 📦 你做過的專案模組（Project Modules）
+## 📦 精選作品（Selected Projects）
 
 | Project | One-liner | Tech | Proof |
 |---|---|---|---|
 
 | **365GeoWork-map-showcase**<br/>`g5120u/365GeoWork-map-showcase` | 地圖任務展示模組（使用 Leaflet + Mock Data） | JavaScript, Leaflet | - |
 
-| **git-DQ**<br/>`g5120u/git-DQ` | 讓任何開發資料夾變成 git 化的冒險世界 | JavaScript | - |
 
-| **saas-ai-builder-engine**<br/>`g5120u/saas-ai-builder-engine` | Enterprise-grade SaaS UI/UX/System Generator Engine（Powered by Cursor） | TypeScript | - |
+
+## 🧪 實驗室 / 練習作品區（Labs）
+
+| Project | What it explores | Tech |
+|---|---|---|
+
+| **git-DQ**<br/>`g5120u/git-DQ` | 讓任何開發資料夾變成 git 化的冒險世界 | JavaScript |
+
+| **saas-ai-builder-engine**<br/>`g5120u/saas-ai-builder-engine` | Enterprise-grade SaaS UI/UX/System Generator Engine（Powered by Cursor） | TypeScript |
+
+
 
 
 ---
@@ -68,7 +77,7 @@ Source of truth:
 | Repo | Last Push | Lang | Stars | Note |
 |---|---:|---|---:|---|
 
-| [g5120u](https://github.com/g5120u/g5120u) | `2026-05-05` | Python | 0 |  |
+| [g5120u](https://github.com/g5120u/g5120u) | `2026-05-06` | Python | 0 |  |
 
 | [saas-ai-builder-engine](https://github.com/g5120u/saas-ai-builder-engine) | `2026-01-07` | TypeScript | 1 | Enterprise-grade SaaS UI / UX / System Generator Engine Powered by Cursor × Rule-based AI Architecture  This is not a demo website generator. This repository implements a real SaaS Production Engine. |
 
@@ -82,7 +91,7 @@ Source of truth:
 
 ---
 
-## 📈 真實開發證據（Real Dev Proof）
+## 📈 開發紀錄（Development Proof）
 
 <div align="center">
 

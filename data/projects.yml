@@ -4,6 +4,7 @@ projects:
     name: "365GeoWork-map-showcase"
     repo: "g5120u/365GeoWork-map-showcase"
     status: "active"
+    category: "selected"
     zh:
       one_liner: "地圖任務展示模組（使用 Leaflet + Mock Data）"
     en:
@@ -14,6 +15,7 @@ projects:
     name: "git-DQ"
     repo: "g5120u/git-DQ"
     status: "active"
+    category: "lab"
     zh:
       one_liner: "讓任何開發資料夾變成 git 化的冒險世界"
     en:
@@ -24,6 +26,7 @@ projects:
     name: "saas-ai-builder-engine"
     repo: "g5120u/saas-ai-builder-engine"
     status: "active"
+    category: "lab"
     zh:
       one_liner: "Enterprise-grade SaaS UI/UX/System Generator Engine（Powered by Cursor）"
     en:

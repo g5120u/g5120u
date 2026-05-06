@@ -4,16 +4,21 @@ on:
   push:
     branches: ["main", "master"]
   schedule:
-    - cron: "17 */6 * * *" # every 6 hours (UTC)
+    - cron: "17 22 * * *" # daily at 06:17 Asia/Taipei
   workflow_dispatch: {}
 
 permissions:
   contents: write
 
+concurrency:
+  group: update-profile-readme-${{ github.ref }}
+  cancel-in-progress: true
+
 jobs:
   build:
     if: ${{ !(github.event_name == 'push' && github.actor == 'github-actions[bot]') }}
     runs-on: ubuntu-latest
+    timeout-minutes: 10
     steps:
       - name: Checkout
         uses: actions/checkout@v4

@@ -1,6 +1,6 @@
 from __future__ import annotations
 
-from datetime import datetime, timedelta, timezone
+from datetime import datetime, timezone
 from pathlib import Path
 from typing import Any
 
@@ -116,6 +116,12 @@ def load_data() -> dict[str, Any]:
     projects = projects_doc.get("projects", [])
     if not isinstance(projects, list):
         projects = []
+    selected_projects = [
+        p for p in projects if isinstance(p, dict) and str(p.get("category", "selected")).strip().lower() != "lab"
+    ]
+    lab_projects = [
+        p for p in projects if isinstance(p, dict) and str(p.get("category", "")).strip().lower() == "lab"
+    ]
 
     mermaid_lines = build_mermaid_lines(projects)
     project_timeline = build_project_timeline(projects)
@@ -136,6 +142,8 @@ def load_data() -> dict[str, Any]:
         "engine_zh": engine_zh,
         "engine_en": engine_en,
         "projects": projects,
+        "selected_projects": selected_projects,
+        "lab_projects": lab_projects,
         "skills": skills,
         "mermaid_lines": mermaid_lines,
         "project_timeline": project_timeline,
@@ -164,10 +172,6 @@ def build() -> Path:
 
     context = load_data()
 
-    # Display in Asia/Taipei (UTC+8) to match what you see day-to-day.
-    tz_tw = timezone(timedelta(hours=8))
-    now_tw = datetime.now(timezone.utc).astimezone(tz_tw)
-    context["generated_at"] = now_tw.strftime("%Y-%m-%d %H:%M (UTC+8)")
     readme = render_readme(context)
     out = root / "README.md"
     out.write_text(readme, encoding="utf-8")
