@@ -201,55 +201,6 @@ def build_boundary_svg(*, size_w: int = 960, size_h: int = 460) -> str:
     return "\n".join(parts) + "\n"
 
 
-def build_ai_workflow_svg(*, size_w: int = 960, size_h: int = 360) -> str:
-    steps = [
-        ("1", "Define scope", "requirements, roles, constraints"),
-        ("2", "Design flow", "screens, states, data boundaries"),
-        ("3", "Read changes", "diffs, call paths, side effects"),
-        ("4", "Verify behavior", "manual QA, logs, regression checks"),
-        ("5", "Own delivery", "ship only understood changes"),
-    ]
-
-    parts = []
-    parts.append(f'<svg xmlns="http://www.w3.org/2000/svg" width="{size_w}" height="{size_h}" viewBox="0 0 {size_w} {size_h}">')
-    parts.append("<defs>")
-    parts.append(
-        "<style>"
-        "text{font-family:ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial;fill:#111827}"
-        ".muted{fill:#6b7280}"
-        ".card{fill:#ffffff;stroke:#d1d5db;stroke-width:2}"
-        ".num{fill:#2563eb;font-size:20px;font-weight:900}"
-        ".head{font-size:16px;font-weight:850}"
-        ".body{font-size:12px;font-weight:650;fill:#4b5563}"
-        ".title{font-size:24px;font-weight:850}"
-        ".arrow{stroke:#9ca3af;stroke-width:3;stroke-linecap:round;stroke-linejoin:round;fill:none}"
-        "</style>"
-    )
-    parts.append("</defs>")
-    parts.append('<rect width="100%" height="100%" fill="#f8fafc"/>')
-    parts.append('<text x="480" y="46" text-anchor="middle" class="title">Code Ownership Workflow | 工程掌控流程</text>')
-    parts.append('<text x="480" y="74" text-anchor="middle" class="muted">AI can assist implementation, but design, review, debugging, and delivery remain owned.</text>')
-
-    x0 = 54
-    y = 122
-    card_w = 154
-    gap = 32
-    for i, (num, head, body) in enumerate(steps):
-        x = x0 + i * (card_w + gap)
-        parts.append(f'<rect x="{x}" y="{y}" width="{card_w}" height="150" rx="14" class="card"/>')
-        parts.append(f'<text x="{x + 18}" y="{y + 38}" class="num">{num}</text>')
-        parts.append(f'<text x="{x + 18}" y="{y + 72}" class="head">{_svg_escape(head)}</text>')
-        parts.append(f'<text x="{x + 18}" y="{y + 100}" class="body">{_svg_escape(body)}</text>')
-        if i < len(steps) - 1:
-            ax = x + card_w + 8
-            ay = y + 75
-            parts.append(f'<path d="M {ax} {ay} L {ax + 16} {ay} M {ax + 10} {ay - 6} L {ax + 16} {ay} L {ax + 10} {ay + 6}" class="arrow"/>')
-
-    parts.append('<text x="480" y="322" text-anchor="middle" class="muted">The useful signal is not typing speed; it is whether the change is understood, traceable, and verified.</text>')
-    parts.append("</svg>")
-    return "\n".join(parts) + "\n"
-
-
 def build_engineering_evidence_svg(*, size_w: int = 960, size_h: int = 430) -> str:
     rows = [
         ("Public profile", "capability radar, boundary map, public repo activity", "no source code or product rules"),
@@ -382,19 +333,16 @@ def generate() -> tuple[Path, Path]:
 
     out_path = assets / "skill-radar.svg"
     boundary_path = assets / "public-private-boundary.svg"
-    ai_workflow_path = assets / "ai-assisted-workflow.svg"
     evidence_path = assets / "engineering-evidence.svg"
     case_study_path = assets / "sanitized-case-study.svg"
 
     svg = build_radar_svg(title="Product Capability Focus | 產品能力重心", axes=bi_axes, max_score=max_score)
     boundary_svg = build_boundary_svg()
-    ai_workflow_svg = build_ai_workflow_svg()
     evidence_svg = build_engineering_evidence_svg()
     case_study_svg = build_case_study_svg()
 
     out_path.write_text(svg, encoding="utf-8")
     boundary_path.write_text(boundary_svg, encoding="utf-8")
-    ai_workflow_path.write_text(ai_workflow_svg, encoding="utf-8")
     evidence_path.write_text(evidence_svg, encoding="utf-8")
     case_study_path.write_text(case_study_svg, encoding="utf-8")
 
