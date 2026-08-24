@@ -26,12 +26,14 @@ engine:
     now_building:
       - "產品流程：把想法拆成畫面、資料、角色與可操作功能"
       - "工程實作：用前端、後端、地圖、工具與自動化把作品做出來"
+      - "工具取捨：優先整合成熟工具，必要時才補足流程銜接與驗證用的私有工具"
       - "持續整理：把練習專案、工具實驗與實作紀錄收斂成可閱讀的作品集"
   en:
     headline: "I am building practical experience across Android products, full-stack integration, and operations workflows"
     now_building:
       - "Product prototypes: turning ideas into screens, data, workflows, and usable features"
       - "Engineering practice: frontend, backend, maps, tools, and automation"
+      - "Tooling judgment: integrate mature tools first, build private glue only when workflow gaps require it"
       - "Portfolio discipline: organizing experiments and implementation notes into readable project evidence"
 
 private_product:
@@ -41,6 +43,7 @@ private_product:
     items:
       - "公開可見：Google Play 上的接就到 Android App，可作為實機展示與產品完成度證明"
       - "實作範圍：手機端流程、角色/任務流程、後台整合、測試與問題排查"
+      - "私有工具：包含實務流程輔助、原型驗證與跨領域工具整合，不公開專案名稱與實作細節"
       - "保留不公開：原始碼、結算流程、營運細節、資料設計與核心商業邏輯"
   en:
     title: "Private Product Work"
@@ -48,5 +51,6 @@ private_product:
     items:
       - "Public signal: Jie Jiu Dao Android App on Google Play, available for live device demonstration"
       - "Implementation scope: mobile workflows, role/task flows, admin integration, testing, and diagnostics"
+      - "Private tooling: practical workflow helpers, prototype validation, and cross-domain integration without public project details"
       - "Kept private: source code, settlement flow, operations details, data design, and core business logic"
 
