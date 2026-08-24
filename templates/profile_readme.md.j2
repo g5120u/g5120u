@@ -55,7 +55,7 @@ Source of truth:
 
 ---
 
-## 📦 精選作品（Selected Projects）
+## 📦 公開展示作品（Public Samples）
 
 | Project | One-liner | Tech | Proof |
 |---|---|---|---|
@@ -76,15 +76,15 @@ Source of truth:
 
 ---
 
-## 🆕 近期更新專案（自動抓取）
+## 🆕 近期公開 repo 動態（Public Activity）
 
-> 目的：你在其他 repo push 後，這裡會在下一次排程刷新時自動反映（不用手動維護）。
+> 只整理公開 repo 的活動訊號；私有產品與核心流程不會放在這裡。
 
 {% if recent_repos and recent_repos|length > 0 %}
-| Repo | Last Push | Lang | Stars | Note |
-|---|---:|---|---:|---|
+| Repo | Last Push | Lang | Note |
+|---|---:|---|---|
 {% for r in recent_repos %}
-| [{{ r.name }}]({{ r.html_url }}) | `{{ r.pushed_date }}` | {{ r.language if r.language else "-" }} | {{ r.stargazers_count }} | {{ r.description if r.description else "" }} |
+| [{{ r.name }}]({{ r.html_url }}) | `{{ r.pushed_date }}` | {{ r.language if r.language else "-" }} | {{ r.description if r.description else "" }} |
 {% endfor %}
 {% else %}
 （尚未取得近期更新 repo；通常是 GitHub API rate limit 或網路暫時性問題。）

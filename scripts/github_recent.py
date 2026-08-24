@@ -43,26 +43,50 @@ class RecentRepo:
             return self.pushed_at
 
 
-def fetch_recent_repos(username: str, *, limit: int = 6, include_forks: bool = False) -> list[RecentRepo]:
+def _short_description(value: str, *, max_length: int = 90) -> str:
+    text = " ".join(value.split())
+    if len(text) <= max_length:
+        return text
+    return text[: max_length - 3].rstrip() + "..."
+
+
+def fetch_recent_repos(
+    username: str,
+    *,
+    limit: int = 6,
+    include_forks: bool = False,
+    min_pushed_year: int = 2020,
+) -> list[RecentRepo]:
     # Public endpoint; rate-limited but fine for a profile README job.
-    url = f"https://api.github.com/users/{username}/repos?sort=pushed&per_page={max(1, min(limit, 20))}&type=owner"
+    url = f"https://api.github.com/users/{username}/repos?sort=pushed&per_page={max(1, min(limit + 3, 20))}&type=owner"
     data = _get_json(url)
     if not isinstance(data, list):
         return []
 
     out: list[RecentRepo] = []
+    profile_repo = f"{username}/{username}".lower()
     for r in data:
         if not isinstance(r, dict):
             continue
         if (not include_forks) and bool(r.get("fork")):
             continue
+        full_name = str(r.get("full_name", "")).strip()
+        if full_name.lower() == profile_repo:
+            continue
+        pushed_at = str(r.get("pushed_at") or "").strip()
+        if min_pushed_year and len(pushed_at) >= 4:
+            try:
+                if int(pushed_at[:4]) < min_pushed_year:
+                    continue
+            except ValueError:
+                pass
         out.append(
             RecentRepo(
-                full_name=str(r.get("full_name", "")).strip(),
+                full_name=full_name,
                 html_url=str(r.get("html_url", "")).strip(),
-                description=str(r.get("description") or "").strip(),
+                description=_short_description(str(r.get("description") or "").strip()),
                 language=str(r.get("language") or "").strip(),
-                pushed_at=str(r.get("pushed_at") or "").strip(),
+                pushed_at=pushed_at,
                 stargazers_count=int(r.get("stargazers_count") or 0),
             )
         )

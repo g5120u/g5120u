@@ -63,12 +63,12 @@ Source of truth:
 
 ---
 
-## 📦 精選作品（Selected Projects）
+## 📦 公開展示作品（Public Samples）
 
 | Project | One-liner | Tech | Proof |
 |---|---|---|---|
 
-| **365GeoWork-map-showcase**<br/>`g5120u/365GeoWork-map-showcase` | 地圖任務展示模組（使用 Leaflet + Mock Data） | JavaScript, Leaflet | - |
+| **365GeoWork-map-showcase**<br/>`g5120u/365GeoWork-map-showcase` | 地圖任務展示模組（公開示範，使用 Leaflet + Mock Data） | JavaScript, Leaflet | - |
 
 
 
@@ -77,32 +77,28 @@ Source of truth:
 | Project | What it explores | Tech |
 |---|---|---|
 
-| **git-DQ**<br/>`g5120u/git-DQ` | 讓任何開發資料夾變成 git 化的冒險世界 | JavaScript |
+| **git-DQ**<br/>`g5120u/git-DQ` | 把 Git 操作包裝成互動式練習體驗 | JavaScript |
 
-| **saas-ai-builder-engine**<br/>`g5120u/saas-ai-builder-engine` | Enterprise-grade SaaS UI/UX/System Generator Engine（Powered by Cursor） | TypeScript |
+| **saas-ai-builder-engine**<br/>`g5120u/saas-ai-builder-engine` | SaaS UI/UX 與系統產生器的實驗性架構練習 | TypeScript |
 
 
 
 
 ---
 
-## 🆕 近期更新專案（自動抓取）
+## 🆕 近期公開 repo 動態（Public Activity）
 
-> 目的：你在其他 repo push 後，這裡會在下一次排程刷新時自動反映（不用手動維護）。
+> 只整理公開 repo 的活動訊號；私有產品與核心流程不會放在這裡。
 
 
-| Repo | Last Push | Lang | Stars | Note |
-|---|---:|---|---:|---|
+| Repo | Last Push | Lang | Note |
+|---|---:|---|---|
 
-| [g5120u](https://github.com/g5120u/g5120u) | `2026-05-06` | Python | 0 |  |
+| [saas-ai-builder-engine](https://github.com/g5120u/saas-ai-builder-engine) | `2026-01-07` | TypeScript | SaaS UI/UX 與系統產生器的實驗性架構練習 |
 
-| [saas-ai-builder-engine](https://github.com/g5120u/saas-ai-builder-engine) | `2026-01-07` | TypeScript | 1 | Enterprise-grade SaaS UI / UX / System Generator Engine Powered by Cursor × Rule-based AI Architecture  This is not a demo website generator. This repository implements a real SaaS Production Engine. |
+| [git-DQ](https://github.com/g5120u/git-DQ) | `2025-12-29` | JavaScript | 把 Git 操作包裝成互動式練習體驗 |
 
-| [git-DQ](https://github.com/g5120u/git-DQ) | `2025-12-29` | JavaScript | 1 | 讓任何開發資料夾git化的冒險世界 |
-
-| [365GeoWork-map-showcase](https://github.com/g5120u/365GeoWork-map-showcase) | `2025-12-23` | JavaScript | 2 | 地圖任務展示模組（使用 Leaflet + Mock Data） |
-
-| [MSX](https://github.com/g5120u/MSX) | `2018-09-27` | - | 0 |  |
+| [365GeoWork-map-showcase](https://github.com/g5120u/365GeoWork-map-showcase) | `2025-12-23` | JavaScript | 地圖任務展示模組（公開示範，使用 Leaflet + Mock Data） |
 
 
 

@@ -1,5 +1,6 @@
 from __future__ import annotations
 
+from dataclasses import replace
 from datetime import datetime, timezone
 from pathlib import Path
 from typing import Any
@@ -95,6 +96,19 @@ def build_project_timeline(projects: list[dict[str, Any]]) -> list[dict[str, str
     return rows
 
 
+def build_public_note_map(projects: list[dict[str, Any]]) -> dict[str, str]:
+    notes: dict[str, str] = {}
+    for p in projects:
+        if not isinstance(p, dict):
+            continue
+        repo = str(p.get("repo", "")).strip().lower()
+        zh = p.get("zh", {}) if isinstance(p.get("zh"), dict) else {}
+        note = str(zh.get("one_liner", "")).strip()
+        if repo and note:
+            notes[repo] = note
+    return notes
+
+
 def load_data() -> dict[str, Any]:
     root = repo_root()
     profile = read_yaml(root / "data" / "profile.yml")
@@ -134,6 +148,11 @@ def load_data() -> dict[str, Any]:
     recent_repos_error = ""
     try:
         recent_repos = fetch_recent_repos(username, limit=6)
+        public_notes = build_public_note_map(projects)
+        recent_repos = [
+            replace(r, description=public_notes.get(r.full_name.lower(), r.description))
+            for r in recent_repos
+        ]
     except Exception as e:
         recent_repos_error = str(e)
 

@@ -6,9 +6,9 @@ projects:
     status: "active"
     category: "selected"
     zh:
-      one_liner: "地圖任務展示模組（使用 Leaflet + Mock Data）"
+      one_liner: "地圖任務展示模組（公開示範，使用 Leaflet + Mock Data）"
     en:
-      one_liner: "Map mission showcase module (Leaflet + mock data)"
+      one_liner: "Public map mission showcase module (Leaflet + mock data)"
     tech: ["JavaScript", "Leaflet"]
 
   - key: git-dq
@@ -17,9 +17,9 @@ projects:
     status: "active"
     category: "lab"
     zh:
-      one_liner: "讓任何開發資料夾變成 git 化的冒險世界"
+      one_liner: "把 Git 操作包裝成互動式練習體驗"
     en:
-      one_liner: "Turn any dev folder into a git-powered adventure world"
+      one_liner: "An interactive practice experience around Git workflows"
     tech: ["JavaScript"]
 
   - key: saas-ai-builder-engine
@@ -28,8 +28,8 @@ projects:
     status: "active"
     category: "lab"
     zh:
-      one_liner: "Enterprise-grade SaaS UI/UX/System Generator Engine（Powered by Cursor）"
+      one_liner: "SaaS UI/UX 與系統產生器的實驗性架構練習"
     en:
-      one_liner: "Enterprise-grade SaaS UI/UX/System Generator Engine (Powered by Cursor)"
+      one_liner: "Experimental architecture practice for SaaS UI/UX and system generation"
     tech: ["TypeScript"]
 
