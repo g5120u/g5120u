@@ -148,6 +148,108 @@ def build_radar_svg(
     return "\n".join(parts) + "\n"
 
 
+def build_boundary_svg(*, size_w: int = 960, size_h: int = 460) -> str:
+    public_items = [
+        "Google Play availability signal",
+        "Live mobile demonstration",
+        "Public samples with mock data",
+        "GitHub activity and learning labs",
+    ]
+    private_items = [
+        "Source code",
+        "Settlement flow",
+        "Operations details",
+        "Data design and business logic",
+    ]
+
+    def text_lines(items: list[str], *, x: int, y: int) -> list[str]:
+        lines = []
+        for i, item in enumerate(items):
+            yy = y + (i * 34)
+            lines.append(f'<text x="{x}" y="{yy}" class="item">- {_svg_escape(item)}</text>')
+        return lines
+
+    parts = []
+    parts.append(f'<svg xmlns="http://www.w3.org/2000/svg" width="{size_w}" height="{size_h}" viewBox="0 0 {size_w} {size_h}">')
+    parts.append("<defs>")
+    parts.append(
+        "<style>"
+        "text{font-family:ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial;fill:#111827}"
+        ".muted{fill:#6b7280}"
+        ".panel{fill:#ffffff;stroke:#d1d5db;stroke-width:2}"
+        ".public{fill:#ecfdf5;stroke:#10b981;stroke-width:2}"
+        ".private{fill:#fff7ed;stroke:#f97316;stroke-width:2}"
+        ".title{font-size:24px;font-weight:800}"
+        ".heading{font-size:20px;font-weight:800}"
+        ".item{font-size:15px;font-weight:650}"
+        ".caption{font-size:14px;font-weight:650}"
+        "</style>"
+    )
+    parts.append("</defs>")
+    parts.append('<rect width="100%" height="100%" fill="#f9fafb"/>')
+    parts.append('<text x="480" y="44" text-anchor="middle" class="title">Public / Private Boundary | 公開與私有邊界</text>')
+    parts.append('<text x="480" y="72" text-anchor="middle" class="muted caption">Show delivery capability without exposing the system blueprint.</text>')
+    parts.append('<rect x="60" y="105" width="390" height="270" rx="14" class="public"/>')
+    parts.append('<rect x="510" y="105" width="390" height="270" rx="14" class="private"/>')
+    parts.append('<text x="90" y="150" class="heading">Public Signals</text>')
+    parts.append('<text x="540" y="150" class="heading">Kept Private</text>')
+    parts.extend(text_lines(public_items, x=90, y=196))
+    parts.extend(text_lines(private_items, x=540, y=196))
+    parts.append('<line x1="480" y1="118" x2="480" y2="362" stroke="#9ca3af" stroke-width="2" stroke-dasharray="8 8"/>')
+    parts.append('<text x="480" y="405" text-anchor="middle" class="muted caption">The public profile is a controlled portfolio surface, not a full product handoff.</text>')
+    parts.append("</svg>")
+    return "\n".join(parts) + "\n"
+
+
+def build_ai_workflow_svg(*, size_w: int = 960, size_h: int = 360) -> str:
+    steps = [
+        ("1", "Define scope", "requirements, roles, constraints"),
+        ("2", "Design flow", "screens, states, data boundaries"),
+        ("3", "Read changes", "diffs, call paths, side effects"),
+        ("4", "Verify behavior", "manual QA, logs, regression checks"),
+        ("5", "Own delivery", "ship only understood changes"),
+    ]
+
+    parts = []
+    parts.append(f'<svg xmlns="http://www.w3.org/2000/svg" width="{size_w}" height="{size_h}" viewBox="0 0 {size_w} {size_h}">')
+    parts.append("<defs>")
+    parts.append(
+        "<style>"
+        "text{font-family:ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial;fill:#111827}"
+        ".muted{fill:#6b7280}"
+        ".card{fill:#ffffff;stroke:#d1d5db;stroke-width:2}"
+        ".num{fill:#2563eb;font-size:20px;font-weight:900}"
+        ".head{font-size:16px;font-weight:850}"
+        ".body{font-size:12px;font-weight:650;fill:#4b5563}"
+        ".title{font-size:24px;font-weight:850}"
+        ".arrow{stroke:#9ca3af;stroke-width:3;stroke-linecap:round;stroke-linejoin:round;fill:none}"
+        "</style>"
+    )
+    parts.append("</defs>")
+    parts.append('<rect width="100%" height="100%" fill="#f8fafc"/>')
+    parts.append('<text x="480" y="46" text-anchor="middle" class="title">Code Ownership Workflow | 工程掌控流程</text>')
+    parts.append('<text x="480" y="74" text-anchor="middle" class="muted">AI can assist implementation, but design, review, debugging, and delivery remain owned.</text>')
+
+    x0 = 54
+    y = 122
+    card_w = 154
+    gap = 32
+    for i, (num, head, body) in enumerate(steps):
+        x = x0 + i * (card_w + gap)
+        parts.append(f'<rect x="{x}" y="{y}" width="{card_w}" height="150" rx="14" class="card"/>')
+        parts.append(f'<text x="{x + 18}" y="{y + 38}" class="num">{num}</text>')
+        parts.append(f'<text x="{x + 18}" y="{y + 72}" class="head">{_svg_escape(head)}</text>')
+        parts.append(f'<text x="{x + 18}" y="{y + 100}" class="body">{_svg_escape(body)}</text>')
+        if i < len(steps) - 1:
+            ax = x + card_w + 8
+            ay = y + 75
+            parts.append(f'<path d="M {ax} {ay} L {ax + 16} {ay} M {ax + 10} {ay - 6} L {ax + 16} {ay} L {ax + 10} {ay + 6}" class="arrow"/>')
+
+    parts.append('<text x="480" y="322" text-anchor="middle" class="muted">The useful signal is not typing speed; it is whether the change is understood, traceable, and verified.</text>')
+    parts.append("</svg>")
+    return "\n".join(parts) + "\n"
+
+
 def generate() -> tuple[Path, Path]:
     root = repo_root()
     skills = read_yaml(root / "data" / "skills.yml")
@@ -169,12 +271,18 @@ def generate() -> tuple[Path, Path]:
     ensure_dir(assets)
 
     out_path = assets / "skill-radar.svg"
+    boundary_path = assets / "public-private-boundary.svg"
+    ai_workflow_path = assets / "ai-assisted-workflow.svg"
 
-    svg = build_radar_svg(title="Skill Radar | 技能雷達", axes=bi_axes, max_score=max_score)
+    svg = build_radar_svg(title="Product Capability Radar | 產品能力雷達", axes=bi_axes, max_score=max_score)
+    boundary_svg = build_boundary_svg()
+    ai_workflow_svg = build_ai_workflow_svg()
 
     out_path.write_text(svg, encoding="utf-8")
+    boundary_path.write_text(boundary_svg, encoding="utf-8")
+    ai_workflow_path.write_text(ai_workflow_svg, encoding="utf-8")
 
-    return out_path, out_path
+    return out_path, boundary_path
 
 
 def main() -> None:

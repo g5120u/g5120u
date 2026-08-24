@@ -51,15 +51,39 @@ Source of truth:
 
 
 
-## 🧠 技能雷達（Skill Radar）
+## 🧠 產品能力雷達（Product Capability Radar）
 
 <div align="center">
 
-![Skill Radar](./assets/skill-radar.svg)
+![Product Capability Radar](./assets/skill-radar.svg)
 
 </div>
 
-> 分數來源：你在 `data/skills.yml` 設定的自評（0–5）。它不會自動讀你的程式碼「推算能力」，但會用你的真實 repo 活動來呈現持續性與產出。
+> 這張圖呈現可被公開理解的產品落地能力，不包含私有產品的原始碼、流程規則或商業細節。
+
+---
+
+## 🧭 公開與私有邊界（Public / Private Boundary）
+
+<div align="center">
+
+![Public Private Boundary](./assets/public-private-boundary.svg)
+
+</div>
+
+> 公開頁面用來建立可信度；完整系統、核心流程與營運細節保留在私有範圍。
+
+---
+
+## 🧩 工程掌控與驗證（Code Ownership）
+
+<div align="center">
+
+![Code Ownership Workflow](./assets/ai-assisted-workflow.svg)
+
+</div>
+
+> AI 是加速工具；我負責需求拆解、流程判斷、程式差異閱讀、除錯排查與結果驗證。
 
 ---
 

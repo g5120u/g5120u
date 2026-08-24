@@ -4,34 +4,39 @@
 max_score: 5
 
 axes:
-  - key: backend
-    zh: "後端"
-    en: "Backend"
+  - key: android_product
+    zh: "Android 產品"
+    en: "Android Product"
     score: 4
-    evidence_tags: ["backend", "api", "performance"] # 可留著當你自己的標籤（目前不會顯示在首頁）
-  - key: frontend
-    zh: "前端"
-    en: "Frontend"
+    evidence_tags: ["android", "mobile", "product"]
+  - key: full_stack
+    zh: "前後端整合"
+    en: "Full-stack"
+    score: 4
+    evidence_tags: ["frontend", "backend", "integration"]
+  - key: workflow_design
+    zh: "流程設計"
+    en: "Workflow Design"
+    score: 4
+    evidence_tags: ["workflow", "roles", "operations"]
+  - key: admin_ops
+    zh: "後台/營運"
+    en: "Admin / Ops"
     score: 3
-    evidence_tags: ["frontend", "ux"]
-  - key: devops
-    zh: "DevOps"
-    en: "DevOps"
+    evidence_tags: ["admin", "ops", "dashboard"]
+  - key: qa_diagnostics
+    zh: "測試排查"
+    en: "QA / Diagnostics"
     score: 3
-    evidence_tags: ["devops", "ci-cd", "docker"]
-  - key: testing
-    zh: "測試"
-    en: "Testing"
-    score: 3
-    evidence_tags: ["testing", "qa"]
+    evidence_tags: ["testing", "qa", "diagnostics"]
   - key: architecture
-    zh: "架構"
+    zh: "系統架構"
     en: "Architecture"
     score: 4
     evidence_tags: ["architecture", "design"]
-  - key: data
-    zh: "資料/分析"
-    en: "Data"
-    score: 2
-    evidence_tags: ["data", "sql"]
+  - key: map_location
+    zh: "地圖/定位"
+    en: "Map / Location"
+    score: 3
+    evidence_tags: ["map", "location", "leaflet"]
 

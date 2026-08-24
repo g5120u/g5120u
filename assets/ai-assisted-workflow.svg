@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="360" viewBox="0 0 960 360">
+<defs>
+<style>text{font-family:ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial;fill:#111827}.muted{fill:#6b7280}.card{fill:#ffffff;stroke:#d1d5db;stroke-width:2}.num{fill:#2563eb;font-size:20px;font-weight:900}.head{font-size:16px;font-weight:850}.body{font-size:12px;font-weight:650;fill:#4b5563}.title{font-size:24px;font-weight:850}.arrow{stroke:#9ca3af;stroke-width:3;stroke-linecap:round;stroke-linejoin:round;fill:none}</style>
+</defs>
+<rect width="100%" height="100%" fill="#f8fafc"/>
+<text x="480" y="46" text-anchor="middle" class="title">Code Ownership Workflow | 工程掌控流程</text>
+<text x="480" y="74" text-anchor="middle" class="muted">AI can assist implementation, but design, review, debugging, and delivery remain owned.</text>
+<rect x="54" y="122" width="154" height="150" rx="14" class="card"/>
+<text x="72" y="160" class="num">1</text>
+<text x="72" y="194" class="head">Define scope</text>
+<text x="72" y="222" class="body">requirements, roles, constraints</text>
+<path d="M 216 197 L 232 197 M 226 191 L 232 197 L 226 203" class="arrow"/>
+<rect x="240" y="122" width="154" height="150" rx="14" class="card"/>
+<text x="258" y="160" class="num">2</text>
+<text x="258" y="194" class="head">Design flow</text>
+<text x="258" y="222" class="body">screens, states, data boundaries</text>
+<path d="M 402 197 L 418 197 M 412 191 L 418 197 L 412 203" class="arrow"/>
+<rect x="426" y="122" width="154" height="150" rx="14" class="card"/>
+<text x="444" y="160" class="num">3</text>
+<text x="444" y="194" class="head">Read changes</text>
+<text x="444" y="222" class="body">diffs, call paths, side effects</text>
+<path d="M 588 197 L 604 197 M 598 191 L 604 197 L 598 203" class="arrow"/>
+<rect x="612" y="122" width="154" height="150" rx="14" class="card"/>
+<text x="630" y="160" class="num">4</text>
+<text x="630" y="194" class="head">Verify behavior</text>
+<text x="630" y="222" class="body">manual QA, logs, regression checks</text>
+<path d="M 774 197 L 790 197 M 784 191 L 790 197 L 784 203" class="arrow"/>
+<rect x="798" y="122" width="154" height="150" rx="14" class="card"/>
+<text x="816" y="160" class="num">5</text>
+<text x="816" y="194" class="head">Own delivery</text>
+<text x="816" y="222" class="body">ship only understood changes</text>
+<text x="480" y="322" text-anchor="middle" class="muted">The useful signal is not typing speed; it is whether the change is understood, traceable, and verified.</text>
+</svg>
