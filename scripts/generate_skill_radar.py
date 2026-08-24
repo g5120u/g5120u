@@ -19,7 +19,7 @@ def build_engineering_evidence_svg(*, size_w: int = 960, size_h: int = 430) -> s
         ("Public profile", "engineering trace, tech scope, public repo activity", "no source code or product rules"),
         ("Safe evidence", "redacted screenshots, QA notes, issue-style summaries", "no real data, secrets, or full flows"),
         ("Controlled demo", "phone demo, selected behavior walkthrough", "no open download link or public credentials"),
-        ("Technical review", "limited diff reading, call-path explanation, test result discussion", "no full repo handoff"),
+        ("Controlled walkthrough", "screens, logs, QA notes, selected behavior discussion", "no full repo handoff"),
     ]
 
     parts = []
@@ -40,7 +40,7 @@ def build_engineering_evidence_svg(*, size_w: int = 960, size_h: int = 430) -> s
     parts.append("</defs>")
     parts.append('<rect width="100%" height="100%" fill="#f8fafc"/>')
     parts.append('<text x="480" y="42" text-anchor="middle" class="title">Engineering Evidence Without Core Exposure | 不暴露核心的工程證據</text>')
-    parts.append('<text x="480" y="70" text-anchor="middle" class="muted">Code matters, but proof can be layered: public signals first, controlled review only when appropriate.</text>')
+    parts.append('<text x="480" y="70" text-anchor="middle" class="muted">Proof can be layered: public signals first, controlled walkthrough only when appropriate.</text>')
 
     x = 54
     y = 104
