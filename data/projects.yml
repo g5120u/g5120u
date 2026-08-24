@@ -1,9 +1,9 @@
 # 專案模組與時間線（用這份資料自動生成：Project Modules + Project Timeline）
 projects:
-  - key: product-engineering-labs
-    name: "product-engineering-labs"
+  - key: product-engineering-proof
+    name: "product-engineering-proof"
     repo: "g5120u/g5120u"
-    display_repo: "profile repo / showcase/product-engineering-labs"
+    display_repo: "profile repo / showcase/product-engineering-proof"
     status: "active"
     category: "selected"
     hide_from_recent: true
@@ -11,13 +11,13 @@ projects:
       start: "2026-08"
       end: "2026-08"
     zh:
-      one_liner: "去敏產品工程樣本：狀態流程、API 邊界、防重複與測試"
+      one_liner: "去敏產品工程證明：狀態流程、API 邊界、防重複與測試"
     en:
-      one_liner: "Sanitized product engineering sample: state flow, API boundary, idempotency, and tests"
+      one_liner: "Sanitized product engineering proof: state flow, API boundary, idempotency, and tests"
     tech: ["Node.js", "API", "node:test"]
     proof:
       - label: "Code"
-        url: "https://github.com/g5120u/g5120u/tree/main/showcase/product-engineering-labs"
+        url: "https://github.com/g5120u/g5120u/tree/main/showcase/product-engineering-proof"
 
   - key: map-showcase
     name: "365GeoWork-map-showcase"

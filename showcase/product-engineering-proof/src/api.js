@@ -4,7 +4,7 @@ import { applyAction, serializeWorkItem } from "./state-machine.js";
 export async function routeRequest(req, res, store) {
   try {
     if (req.method === "GET" && req.url === "/health") {
-      return sendJson(res, 200, { ok: true, service: "product-engineering-labs" });
+      return sendJson(res, 200, { ok: true, service: "product-engineering-proof" });
     }
 
     const match = req.url.match(/^\/work-items\/([^/]+)\/actions$/);

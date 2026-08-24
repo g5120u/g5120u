@@ -1,8 +1,8 @@
 {
-  "name": "product-engineering-labs",
+  "name": "product-engineering-proof",
   "version": "0.1.0",
   "private": true,
-  "description": "Sanitized product engineering labs for state flows, API boundaries, and tests.",
+  "description": "Sanitized product engineering proof for state flows, API boundaries, and tests.",
   "type": "module",
   "scripts": {
     "start": "node src/server.js",

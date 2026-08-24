@@ -10,5 +10,5 @@ const server = http.createServer((req, res) => {
 });
 
 server.listen(port, () => {
-  console.log(`product-engineering-labs listening on http://localhost:${port}`);
+  console.log(`product-engineering-proof listening on http://localhost:${port}`);
 });
