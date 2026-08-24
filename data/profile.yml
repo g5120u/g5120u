@@ -4,13 +4,13 @@ username: "g5120u"
 identity:
   zh:
     name: "g5120u"
-    title: "Software Builder / Full-stack Learner"
-    tagline: "把想法整理成可執行的產品原型，持續累積可驗證的工程作品"
+    title: "Software Builder / Android & Full-stack"
+    tagline: "把想法整理成可操作的產品流程，持續累積可展示的工程作品"
     location: "Taiwan"
   en:
     name: "g5120u"
-    title: "Software Builder / Full-stack Learner"
-    tagline: "Turning ideas into product prototypes and verifiable engineering work"
+    title: "Software Builder / Android & Full-stack"
+    tagline: "Turning ideas into usable product workflows and demonstrable engineering work"
     location: "Taiwan"
 
 links:
@@ -22,15 +22,31 @@ links:
 # 這裡的 key 仍叫 engine（為了相容生成腳本），但「呈現」會是企業看得懂的履歷敘事
 engine:
   zh:
-    headline: "我正在累積產品開發、前後端整合與自動化流程的實作經驗"
+    headline: "我正在累積 Android 產品、前後端整合與營運流程系統的實作經驗"
     now_building:
-      - "產品原型：把想法拆成畫面、資料、流程與可操作功能"
+      - "產品流程：把想法拆成畫面、資料、角色與可操作功能"
       - "工程實作：用前端、後端、地圖、工具與自動化把作品做出來"
       - "持續整理：把練習專案、工具實驗與實作紀錄收斂成可閱讀的作品集"
   en:
-    headline: "I am building practical experience across product development, full-stack integration, and automation"
+    headline: "I am building practical experience across Android products, full-stack integration, and operations workflows"
     now_building:
       - "Product prototypes: turning ideas into screens, data, workflows, and usable features"
       - "Engineering practice: frontend, backend, maps, tools, and automation"
       - "Portfolio discipline: organizing experiments and implementation notes into readable project evidence"
+
+private_product:
+  zh:
+    title: "私有產品開發（Private Product Work）"
+    summary: "目前有 Android 產品可透過 Google Play 與手機現場展示；公開頁面只呈現產品落地能力，不公開核心原始碼與商業流程。"
+    items:
+      - "公開可見：Google Play 上的接就到 Android App，可作為實機展示與產品完成度證明"
+      - "實作範圍：手機端流程、角色/任務流程、後台整合、測試與問題排查"
+      - "保留不公開：原始碼、結算流程、營運細節、資料設計與核心商業邏輯"
+  en:
+    title: "Private Product Work"
+    summary: "Android product work is available through Google Play and live mobile demonstration; this profile shows delivery capability without exposing source code or core business workflows."
+    items:
+      - "Public signal: Jie Jiu Dao Android App on Google Play, available for live device demonstration"
+      - "Implementation scope: mobile workflows, role/task flows, admin integration, testing, and diagnostics"
+      - "Kept private: source code, settlement flow, operations details, data design, and core business logic"
 

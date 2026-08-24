@@ -112,6 +112,9 @@ def load_data() -> dict[str, Any]:
     engine = profile.get("engine", {}) if isinstance(profile.get("engine"), dict) else {}
     engine_zh = engine.get("zh", {}) if isinstance(engine.get("zh"), dict) else {}
     engine_en = engine.get("en", {}) if isinstance(engine.get("en"), dict) else {}
+    private_product = profile.get("private_product", {}) if isinstance(profile.get("private_product"), dict) else {}
+    private_product_zh = private_product.get("zh", {}) if isinstance(private_product.get("zh"), dict) else {}
+    private_product_en = private_product.get("en", {}) if isinstance(private_product.get("en"), dict) else {}
 
     projects = projects_doc.get("projects", [])
     if not isinstance(projects, list):
@@ -141,6 +144,8 @@ def load_data() -> dict[str, Any]:
         "links": links,
         "engine_zh": engine_zh,
         "engine_en": engine_en,
+        "private_product_zh": private_product_zh,
+        "private_product_en": private_product_en,
         "projects": projects,
         "selected_projects": selected_projects,
         "lab_projects": lab_projects,

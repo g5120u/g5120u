@@ -30,6 +30,19 @@ Source of truth:
 
 ---
 
+{% if private_product_zh and private_product_zh.title %}
+## 🔒 {{ private_product_zh.title }}
+
+**{{ private_product_zh.summary }}**
+
+{% for item in private_product_zh["items"] %}
+- {{ item }}
+{% endfor %}
+
+---
+
+{% endif %}
+
 ## 🧠 技能雷達（Skill Radar）
 
 <div align="center">
