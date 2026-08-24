@@ -15,7 +15,7 @@
 <rect x="244" y="150" width="370" height="62" class="box"/>
 <rect x="614" y="150" width="290" height="62" class="box"/>
 <text x="72" y="187" class="head">Public profile</text>
-<text x="262" y="187" class="cell">capability radar, boundary map, public repo activity</text>
+<text x="262" y="187" class="cell">engineering trace, tech scope, public repo activity</text>
 <text x="632" y="187" class="cell">no source code or product rules</text>
 <rect x="54" y="212" width="190" height="62" class="box"/>
 <rect x="244" y="212" width="370" height="62" class="box"/>
