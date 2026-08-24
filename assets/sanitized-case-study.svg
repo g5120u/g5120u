@@ -3,34 +3,34 @@
 <style>text{font-family:ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial;fill:#111827}.muted{fill:#6b7280}.title{font-size:24px;font-weight:850}.layer{font-size:16px;font-weight:850}.tool{font-size:13px;font-weight:750;fill:#2563eb}.body{font-size:12px;font-weight:650;fill:#4b5563}.box{fill:#ffffff;stroke:#d1d5db;stroke-width:2}.shield{fill:#fff7ed;stroke:#f97316;stroke-width:2}.line{stroke:#9ca3af;stroke-width:3;stroke-linecap:round}</style>
 </defs>
 <rect width="100%" height="100%" fill="#f8fafc"/>
-<text x="480" y="42" text-anchor="middle" class="title">Sanitized Case Study | 去敏案例研究</text>
-<text x="480" y="70" text-anchor="middle" class="muted">Local service workflow system, shown as capability layers instead of source code or business rules.</text>
+<text x="480" y="42" text-anchor="middle" class="title">去敏案例研究 | Sanitized Case Study</text>
+<text x="480" y="70" text-anchor="middle" class="muted">我把真實專案整理成能力層，不公開原始碼、流程規則或底層選型。</text>
 <rect x="50" y="112" width="270" height="76" rx="12" class="box"/>
-<text x="68" y="140" class="layer">Mobile</text>
+<text x="68" y="140" class="layer">行動端</text>
 <text x="68" y="160" class="tool">Flutter / Android</text>
-<text x="68" y="178" class="body">app flow, permissions, device QA</text>
+<text x="68" y="178" class="body">App 流程、權限、實機 QA</text>
 <rect x="345" y="112" width="270" height="76" rx="12" class="box"/>
-<text x="363" y="140" class="layer">Backend</text>
+<text x="363" y="140" class="layer">後端</text>
 <text x="363" y="160" class="tool">Node.js / Express</text>
-<text x="363" y="178" class="body">services, APIs, diagnostics</text>
+<text x="363" y="178" class="body">服務、API、診斷</text>
 <rect x="640" y="112" width="270" height="76" rx="12" class="box"/>
-<text x="658" y="140" class="layer">Realtime</text>
+<text x="658" y="140" class="layer">即時事件</text>
 <text x="658" y="160" class="tool">WebSocket / FCM</text>
-<text x="658" y="178" class="body">events, notifications, sync</text>
+<text x="658" y="178" class="body">事件、推播、狀態同步</text>
 <rect x="50" y="214" width="270" height="76" rx="12" class="box"/>
-<text x="68" y="242" class="layer">Map</text>
+<text x="68" y="242" class="layer">地圖定位</text>
 <text x="68" y="262" class="tool">Location APIs</text>
-<text x="68" y="280" class="body">location and map integration</text>
+<text x="68" y="280" class="body">定位與地圖整合</text>
 <rect x="345" y="214" width="270" height="76" rx="12" class="box"/>
-<text x="363" y="242" class="layer">Data</text>
-<text x="363" y="262" class="tool">Relational DB</text>
-<text x="363" y="280" class="body">state, audit, migrations</text>
+<text x="363" y="242" class="layer">資料層</text>
+<text x="363" y="262" class="tool">關聯式資料庫</text>
+<text x="363" y="280" class="body">狀態、稽核、版本遷移</text>
 <rect x="640" y="214" width="270" height="76" rx="12" class="box"/>
 <text x="658" y="242" class="layer">QA</text>
 <text x="658" y="262" class="tool">Playwright / ADB</text>
-<text x="658" y="280" class="body">screenshots, logs, regression checks</text>
+<text x="658" y="280" class="body">截圖、log、回歸檢查</text>
 <line x1="120" y1="304" x2="840" y2="304" class="line"/>
 <rect x="240" y="328" width="480" height="54" rx="14" class="shield"/>
-<text x="480" y="352" text-anchor="middle" class="layer">Protected</text>
-<text x="480" y="372" text-anchor="middle" class="body">source code, data design, settlement, operations rules, credentials, real users</text>
+<text x="480" y="352" text-anchor="middle" class="layer">保留不公開</text>
+<text x="480" y="372" text-anchor="middle" class="body">原始碼、資料設計、結算、營運規則、憑證、真實使用者</text>
 </svg>
