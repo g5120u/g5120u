@@ -117,9 +117,9 @@ Source of truth:
 
 | Realtime | WebSocket / FCM | 即時事件、推播、狀態同步與裝置端驗證 |
 
-| Map | Mapbox / Geocode / GPS | 地圖呈現、定位、地址/座標流程與地圖整合 |
+| Map | Map / Location APIs | 地圖呈現、定位、地址/座標流程與地圖整合 |
 
-| Data | PostgreSQL / migrations | 資料演進、狀態資料、稽核與流程資料整理 |
+| Data | Relational DB / migrations | 資料演進、狀態資料、稽核與流程資料整理 |
 
 | QA | Playwright / ADB / logs | 瀏覽器流程、手機實機畫面、截圖證據與回歸檢查 |
 
@@ -127,6 +127,18 @@ Source of truth:
 ---
 
 
+
+## 🧪 去敏案例研究（Sanitized Case Study）
+
+<div align="center">
+
+![Sanitized Case Study](./assets/sanitized-case-study.svg)
+
+</div>
+
+> 這不是公開真實 repo；它用去敏方式呈現真實專案可轉移的工程能力：行動端、後端、即時事件、地圖定位、資料演進與 QA 證據。
+
+---
 
 ## 📦 公開展示作品（Public Samples）
 
@@ -166,39 +178,6 @@ Source of truth:
 | [git-DQ](https://github.com/g5120u/git-DQ) | `2025-12` | JavaScript | 把 Git 操作包裝成互動式練習體驗 |
 
 
-
----
-
-## 📈 開發紀錄（Development Proof）
-
-<div align="center">
-
-<a href="https://github.com/g5120u">
-  <img alt="GitHub Stats" referrerpolicy="no-referrer" loading="lazy"
-       src="https://github-readme-stats.vercel.app/api?username=g5120u&show_icons=true&rank_icon=github&hide_title=true&theme=github_dark&cache_seconds=21600" />
-</a>
-
-<a href="https://github.com/g5120u">
-  <img alt="Top Languages" referrerpolicy="no-referrer" loading="lazy"
-       src="https://github-readme-stats.vercel.app/api/top-langs/?username=g5120u&layout=compact&theme=github_dark&cache_seconds=21600" />
-</a>
-
-<a href="https://github.com/g5120u">
-  <img alt="GitHub Streak" referrerpolicy="no-referrer" loading="lazy"
-       src="https://streak-stats.demolab.com?user=g5120u&theme=github-dark-blue&hide_border=true&date_format=%5BY.%5Dn.j" />
-</a>
-
-<a href="https://github.com/g5120u">
-  <img alt="Trophy" referrerpolicy="no-referrer" loading="lazy"
-       src="https://github-profile-trophy.vercel.app/?username=g5120u&theme=onedark&no-frame=true&row=1&column=7&margin-w=6&margin-h=6" />
-</a>
-
-<a href="https://github.com/g5120u">
-  <img alt="Activity Graph" referrerpolicy="no-referrer" loading="lazy"
-       src="https://github-readme-activity-graph.vercel.app/graph?username=g5120u&theme=github-compact&hide_border=true" />
-</a>
-
-</div>
 
 ---
 

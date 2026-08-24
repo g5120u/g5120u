@@ -305,6 +305,61 @@ def build_engineering_evidence_svg(*, size_w: int = 960, size_h: int = 430) -> s
     return "\n".join(parts) + "\n"
 
 
+def build_case_study_svg(*, size_w: int = 960, size_h: int = 420) -> str:
+    layers = [
+        ("Mobile", "Flutter / Android", "app flow, permissions, device QA"),
+        ("Backend", "Node.js / Express", "services, APIs, diagnostics"),
+        ("Realtime", "WebSocket / FCM", "events, notifications, sync"),
+        ("Map", "Location APIs", "location and map integration"),
+        ("Data", "Relational DB", "state, audit, migrations"),
+        ("QA", "Playwright / ADB", "screenshots, logs, regression checks"),
+    ]
+
+    parts = []
+    parts.append(f'<svg xmlns="http://www.w3.org/2000/svg" width="{size_w}" height="{size_h}" viewBox="0 0 {size_w} {size_h}">')
+    parts.append("<defs>")
+    parts.append(
+        "<style>"
+        "text{font-family:ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial;fill:#111827}"
+        ".muted{fill:#6b7280}"
+        ".title{font-size:24px;font-weight:850}"
+        ".layer{font-size:16px;font-weight:850}"
+        ".tool{font-size:13px;font-weight:750;fill:#2563eb}"
+        ".body{font-size:12px;font-weight:650;fill:#4b5563}"
+        ".box{fill:#ffffff;stroke:#d1d5db;stroke-width:2}"
+        ".shield{fill:#fff7ed;stroke:#f97316;stroke-width:2}"
+        ".line{stroke:#9ca3af;stroke-width:3;stroke-linecap:round}"
+        "</style>"
+    )
+    parts.append("</defs>")
+    parts.append('<rect width="100%" height="100%" fill="#f8fafc"/>')
+    parts.append('<text x="480" y="42" text-anchor="middle" class="title">Sanitized Case Study | 去敏案例研究</text>')
+    parts.append('<text x="480" y="70" text-anchor="middle" class="muted">Local service workflow system, shown as capability layers instead of source code or business rules.</text>')
+
+    start_x = 50
+    start_y = 112
+    box_w = 270
+    box_h = 76
+    gap_x = 25
+    gap_y = 26
+    for i, (layer, tool, body) in enumerate(layers):
+        col = i % 3
+        row = i // 3
+        x = start_x + col * (box_w + gap_x)
+        y = start_y + row * (box_h + gap_y)
+        parts.append(f'<rect x="{x}" y="{y}" width="{box_w}" height="{box_h}" rx="12" class="box"/>')
+        parts.append(f'<text x="{x + 18}" y="{y + 28}" class="layer">{_svg_escape(layer)}</text>')
+        parts.append(f'<text x="{x + 18}" y="{y + 48}" class="tool">{_svg_escape(tool)}</text>')
+        parts.append(f'<text x="{x + 18}" y="{y + 66}" class="body">{_svg_escape(body)}</text>')
+
+    parts.append('<line x1="120" y1="304" x2="840" y2="304" class="line"/>')
+    parts.append('<rect x="240" y="328" width="480" height="54" rx="14" class="shield"/>')
+    parts.append('<text x="480" y="352" text-anchor="middle" class="layer">Protected</text>')
+    parts.append('<text x="480" y="372" text-anchor="middle" class="body">source code, data design, settlement, operations rules, credentials, real users</text>')
+    parts.append("</svg>")
+    return "\n".join(parts) + "\n"
+
+
 def generate() -> tuple[Path, Path]:
     root = repo_root()
     skills = read_yaml(root / "data" / "skills.yml")
@@ -329,16 +384,19 @@ def generate() -> tuple[Path, Path]:
     boundary_path = assets / "public-private-boundary.svg"
     ai_workflow_path = assets / "ai-assisted-workflow.svg"
     evidence_path = assets / "engineering-evidence.svg"
+    case_study_path = assets / "sanitized-case-study.svg"
 
     svg = build_radar_svg(title="Product Capability Focus | 產品能力重心", axes=bi_axes, max_score=max_score)
     boundary_svg = build_boundary_svg()
     ai_workflow_svg = build_ai_workflow_svg()
     evidence_svg = build_engineering_evidence_svg()
+    case_study_svg = build_case_study_svg()
 
     out_path.write_text(svg, encoding="utf-8")
     boundary_path.write_text(boundary_svg, encoding="utf-8")
     ai_workflow_path.write_text(ai_workflow_svg, encoding="utf-8")
     evidence_path.write_text(evidence_svg, encoding="utf-8")
+    case_study_path.write_text(case_study_svg, encoding="utf-8")
 
     return out_path, boundary_path
 
