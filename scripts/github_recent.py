@@ -35,6 +35,8 @@ class RecentRepo:
 
     @property
     def pushed_date(self) -> str:
+        if len(self.pushed_at) == 7 and self.pushed_at[4] == "-":
+            return self.pushed_at
         # ISO 8601 -> YYYY-MM-DD (keep UTC date)
         try:
             dt = datetime.fromisoformat(self.pushed_at.replace("Z", "+00:00"))

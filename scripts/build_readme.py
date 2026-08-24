@@ -9,7 +9,7 @@ from jinja2 import Environment, FileSystemLoader
 
 from ._lib import ensure_dir, read_yaml, repo_root
 from .generate_skill_radar import generate as generate_skill_radar
-from .github_recent import fetch_recent_repos, fetch_repo_month_range
+from .github_recent import RecentRepo, fetch_recent_repos, fetch_repo_month_range
 
 
 def _month_now_utc() -> str:
@@ -109,6 +109,29 @@ def build_public_note_map(projects: list[dict[str, Any]]) -> dict[str, str]:
     return notes
 
 
+def build_recent_repo_fallback(projects: list[dict[str, Any]]) -> list[RecentRepo]:
+    repos: list[RecentRepo] = []
+    for p in projects:
+        if not isinstance(p, dict):
+            continue
+        repo = str(p.get("repo", "")).strip()
+        if "/" not in repo:
+            continue
+        zh = p.get("zh", {}) if isinstance(p.get("zh"), dict) else {}
+        period = p.get("period", {}) if isinstance(p.get("period"), dict) else {}
+        repos.append(
+            RecentRepo(
+                full_name=repo,
+                html_url=f"https://github.com/{repo}",
+                description=str(zh.get("one_liner", "")).strip(),
+                language=", ".join(p.get("tech", [])) if isinstance(p.get("tech"), list) else "",
+                pushed_at=str(period.get("end", "")).strip(),
+                stargazers_count=0,
+            )
+        )
+    return sorted(repos, key=lambda r: r.pushed_at, reverse=True)
+
+
 def load_data() -> dict[str, Any]:
     root = repo_root()
     profile = read_yaml(root / "data" / "profile.yml")
@@ -129,6 +152,8 @@ def load_data() -> dict[str, Any]:
     private_product = profile.get("private_product", {}) if isinstance(profile.get("private_product"), dict) else {}
     private_product_zh = private_product.get("zh", {}) if isinstance(private_product.get("zh"), dict) else {}
     private_product_en = private_product.get("en", {}) if isinstance(private_product.get("en"), dict) else {}
+    tech_stack = profile.get("tech_stack", {}) if isinstance(profile.get("tech_stack"), dict) else {}
+    tech_stack_zh = tech_stack.get("zh", {}) if isinstance(tech_stack.get("zh"), dict) else {}
 
     projects = projects_doc.get("projects", [])
     if not isinstance(projects, list):
@@ -155,6 +180,7 @@ def load_data() -> dict[str, Any]:
         ]
     except Exception as e:
         recent_repos_error = str(e)
+        recent_repos = build_recent_repo_fallback(projects)
 
     return {
         "username": username,
@@ -165,6 +191,7 @@ def load_data() -> dict[str, Any]:
         "engine_en": engine_en,
         "private_product_zh": private_product_zh,
         "private_product_en": private_product_en,
+        "tech_stack_zh": tech_stack_zh,
         "projects": projects,
         "selected_projects": selected_projects,
         "lab_projects": lab_projects,

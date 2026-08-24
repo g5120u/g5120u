@@ -122,7 +122,7 @@ def build_radar_svg(
 
     # Title
     parts.append(f'<text x="{cx:.2f}" y="48" text-anchor="middle" font-size="22" font-weight="700">{title_esc}</text>')
-    parts.append(f'<text x="{cx:.2f}" y="72" text-anchor="middle" class="muted" font-size="14">0–{max_score:g}</text>')
+    parts.append(f'<text x="{cx:.2f}" y="72" text-anchor="middle" class="muted" font-size="14">relative capability focus, not an exam score</text>')
 
     # Grid
     for pts in grid_polys:
@@ -250,6 +250,61 @@ def build_ai_workflow_svg(*, size_w: int = 960, size_h: int = 360) -> str:
     return "\n".join(parts) + "\n"
 
 
+def build_engineering_evidence_svg(*, size_w: int = 960, size_h: int = 430) -> str:
+    rows = [
+        ("Public profile", "capability radar, boundary map, public repo activity", "no source code or product rules"),
+        ("Safe evidence", "redacted screenshots, QA notes, issue-style summaries", "no real data, secrets, or full flows"),
+        ("Controlled demo", "phone demo, selected behavior walkthrough", "no open download link or public credentials"),
+        ("Technical review", "limited diff reading, call-path explanation, test result discussion", "no full repo handoff"),
+    ]
+
+    parts = []
+    parts.append(f'<svg xmlns="http://www.w3.org/2000/svg" width="{size_w}" height="{size_h}" viewBox="0 0 {size_w} {size_h}">')
+    parts.append("<defs>")
+    parts.append(
+        "<style>"
+        "text{font-family:ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial;fill:#111827}"
+        ".muted{fill:#6b7280}"
+        ".title{font-size:24px;font-weight:850}"
+        ".head{font-size:16px;font-weight:850}"
+        ".cell{font-size:13px;font-weight:650}"
+        ".box{fill:#ffffff;stroke:#d1d5db;stroke-width:2}"
+        ".safe{fill:#eff6ff;stroke:#3b82f6;stroke-width:2}"
+        ".private{fill:#fef2f2;stroke:#ef4444;stroke-width:2}"
+        "</style>"
+    )
+    parts.append("</defs>")
+    parts.append('<rect width="100%" height="100%" fill="#f8fafc"/>')
+    parts.append('<text x="480" y="42" text-anchor="middle" class="title">Engineering Evidence Without Core Exposure | 不暴露核心的工程證據</text>')
+    parts.append('<text x="480" y="70" text-anchor="middle" class="muted">Code matters, but proof can be layered: public signals first, controlled review only when appropriate.</text>')
+
+    x = 54
+    y = 104
+    col1 = 190
+    col2 = 370
+    col3 = 290
+    row_h = 62
+    parts.append(f'<rect x="{x}" y="{y}" width="{col1}" height="46" class="box"/>')
+    parts.append(f'<rect x="{x + col1}" y="{y}" width="{col2}" height="46" class="safe"/>')
+    parts.append(f'<rect x="{x + col1 + col2}" y="{y}" width="{col3}" height="46" class="private"/>')
+    parts.append(f'<text x="{x + 18}" y="{y + 30}" class="head">Layer</text>')
+    parts.append(f'<text x="{x + col1 + 18}" y="{y + 30}" class="head">Visible proof</text>')
+    parts.append(f'<text x="{x + col1 + col2 + 18}" y="{y + 30}" class="head">Protected boundary</text>')
+
+    for i, (layer, proof, boundary) in enumerate(rows):
+        yy = y + 46 + (i * row_h)
+        parts.append(f'<rect x="{x}" y="{yy}" width="{col1}" height="{row_h}" class="box"/>')
+        parts.append(f'<rect x="{x + col1}" y="{yy}" width="{col2}" height="{row_h}" class="box"/>')
+        parts.append(f'<rect x="{x + col1 + col2}" y="{yy}" width="{col3}" height="{row_h}" class="box"/>')
+        parts.append(f'<text x="{x + 18}" y="{yy + 37}" class="head">{_svg_escape(layer)}</text>')
+        parts.append(f'<text x="{x + col1 + 18}" y="{yy + 37}" class="cell">{_svg_escape(proof)}</text>')
+        parts.append(f'<text x="{x + col1 + col2 + 18}" y="{yy + 37}" class="cell">{_svg_escape(boundary)}</text>')
+
+    parts.append('<text x="480" y="394" text-anchor="middle" class="muted">The goal is credibility, not full disclosure: show reasoning, verification, and ownership without handing over the blueprint.</text>')
+    parts.append("</svg>")
+    return "\n".join(parts) + "\n"
+
+
 def generate() -> tuple[Path, Path]:
     root = repo_root()
     skills = read_yaml(root / "data" / "skills.yml")
@@ -273,14 +328,17 @@ def generate() -> tuple[Path, Path]:
     out_path = assets / "skill-radar.svg"
     boundary_path = assets / "public-private-boundary.svg"
     ai_workflow_path = assets / "ai-assisted-workflow.svg"
+    evidence_path = assets / "engineering-evidence.svg"
 
-    svg = build_radar_svg(title="Product Capability Radar | 產品能力雷達", axes=bi_axes, max_score=max_score)
+    svg = build_radar_svg(title="Product Capability Focus | 產品能力重心", axes=bi_axes, max_score=max_score)
     boundary_svg = build_boundary_svg()
     ai_workflow_svg = build_ai_workflow_svg()
+    evidence_svg = build_engineering_evidence_svg()
 
     out_path.write_text(svg, encoding="utf-8")
     boundary_path.write_text(boundary_svg, encoding="utf-8")
     ai_workflow_path.write_text(ai_workflow_svg, encoding="utf-8")
+    evidence_path.write_text(evidence_svg, encoding="utf-8")
 
     return out_path, boundary_path
 

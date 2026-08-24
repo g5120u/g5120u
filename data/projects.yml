@@ -5,6 +5,9 @@ projects:
     repo: "g5120u/365GeoWork-map-showcase"
     status: "active"
     category: "selected"
+    period:
+      start: "2025-12"
+      end: "2025-12"
     zh:
       one_liner: "地圖任務展示模組（公開示範，使用 Leaflet + Mock Data）"
     en:
@@ -16,6 +19,9 @@ projects:
     repo: "g5120u/git-DQ"
     status: "active"
     category: "lab"
+    period:
+      start: "2025-12"
+      end: "2025-12"
     zh:
       one_liner: "把 Git 操作包裝成互動式練習體驗"
     en:
@@ -27,6 +33,9 @@ projects:
     repo: "g5120u/saas-ai-builder-engine"
     status: "active"
     category: "lab"
+    period:
+      start: "2026-01"
+      end: "2026-01"
     zh:
       one_liner: "SaaS UI/UX 與系統產生器的實驗性架構練習"
     en:

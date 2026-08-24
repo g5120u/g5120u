@@ -1,42 +1,41 @@
-# Skill Radar 資料：0~5 分（建議 6~10 個軸；越少越清楚）
-# 分數是「自評」：不會自動讀你其他 repo 的程式碼去推算能力值（那很容易誤判）。
-# 建議用真實 repo / PR / issue / release / demo 當佐證，讓分數可被理解與信任。
+# Product Capability Focus 資料：0~5 表示能力重心，不是考試分數。
+# 公開頁面只呈現方向與強項，不公開私有專案的程式碼、流程規則或資料設計。
 max_score: 5
 
 axes:
   - key: android_product
     zh: "Android 產品"
     en: "Android Product"
-    score: 4
+    score: 4.5
     evidence_tags: ["android", "mobile", "product"]
   - key: full_stack
     zh: "前後端整合"
     en: "Full-stack"
-    score: 4
+    score: 4.4
     evidence_tags: ["frontend", "backend", "integration"]
   - key: workflow_design
     zh: "流程設計"
     en: "Workflow Design"
-    score: 4
+    score: 4.5
     evidence_tags: ["workflow", "roles", "operations"]
   - key: admin_ops
     zh: "後台/營運"
     en: "Admin / Ops"
-    score: 3
+    score: 4
     evidence_tags: ["admin", "ops", "dashboard"]
   - key: qa_diagnostics
     zh: "測試排查"
     en: "QA / Diagnostics"
-    score: 3
+    score: 4.3
     evidence_tags: ["testing", "qa", "diagnostics"]
   - key: architecture
     zh: "系統架構"
     en: "Architecture"
-    score: 4
+    score: 4.2
     evidence_tags: ["architecture", "design"]
   - key: map_location
     zh: "地圖/定位"
     en: "Map / Location"
-    score: 3
-    evidence_tags: ["map", "location", "leaflet"]
+    score: 4.2
+    evidence_tags: ["map", "location", "gps", "geocode", "mapbox", "leaflet"]
 

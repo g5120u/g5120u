@@ -55,15 +55,15 @@ Source of truth:
 
 
 
-## 🧠 產品能力雷達（Product Capability Radar）
+## 🧠 產品能力重心（Product Capability Focus）
 
 <div align="center">
 
-![Product Capability Radar](./assets/skill-radar.svg)
+![Product Capability Focus](./assets/skill-radar.svg)
 
 </div>
 
-> 這張圖呈現可被公開理解的產品落地能力，不包含私有產品的原始碼、流程規則或商業細節。
+> 這張圖呈現可被公開理解的產品能力重心，不是考試分數；私有產品的原始碼、流程規則與商業細節不公開。
 
 ---
 
@@ -90,6 +90,43 @@ Source of truth:
 > AI 是加速工具；我負責需求拆解、流程判斷、程式差異閱讀、除錯排查與結果驗證。
 
 ---
+
+## 🧾 工程證據鏈（Engineering Evidence）
+
+<div align="center">
+
+![Engineering Evidence](./assets/engineering-evidence.svg)
+
+</div>
+
+> 對外展示的是可驗證的工程痕跡：需求拆解、去敏畫面、測試紀錄、問題排查與受控走讀；核心原始碼、資料設計與完整商業流程不公開。
+
+---
+
+
+## 🛠️ 技術棧與實作範圍（Tech Stack Scope）
+
+> 這裡呈現公開可理解的實作範圍，不用百分比包裝能力，也不公開核心程式。
+
+| Layer | Tools | Practical scope |
+|---|---|---|
+
+| Mobile | Flutter / Android | App 流程、實機展示、登入/狀態/權限與行動端 QA |
+
+| Backend | Node.js / Express | API、服務切分、流程串接、錯誤處理與診斷 |
+
+| Realtime | WebSocket / FCM | 即時事件、推播、狀態同步與裝置端驗證 |
+
+| Map | Mapbox / Geocode / GPS | 地圖呈現、定位、地址/座標流程與地圖整合 |
+
+| Data | PostgreSQL / migrations | 資料演進、狀態資料、稽核與流程資料整理 |
+
+| QA | Playwright / ADB / logs | 瀏覽器流程、手機實機畫面、截圖證據與回歸檢查 |
+
+
+---
+
+
 
 ## 📦 公開展示作品（Public Samples）
 
@@ -122,11 +159,11 @@ Source of truth:
 | Repo | Last Push | Lang | Note |
 |---|---:|---|---|
 
-| [saas-ai-builder-engine](https://github.com/g5120u/saas-ai-builder-engine) | `2026-01-07` | TypeScript | SaaS UI/UX 與系統產生器的實驗性架構練習 |
+| [saas-ai-builder-engine](https://github.com/g5120u/saas-ai-builder-engine) | `2026-01` | TypeScript | SaaS UI/UX 與系統產生器的實驗性架構練習 |
 
-| [git-DQ](https://github.com/g5120u/git-DQ) | `2025-12-29` | JavaScript | 把 Git 操作包裝成互動式練習體驗 |
+| [365GeoWork-map-showcase](https://github.com/g5120u/365GeoWork-map-showcase) | `2025-12` | JavaScript, Leaflet | 地圖任務展示模組（公開示範，使用 Leaflet + Mock Data） |
 
-| [365GeoWork-map-showcase](https://github.com/g5120u/365GeoWork-map-showcase) | `2025-12-23` | JavaScript | 地圖任務展示模組（公開示範，使用 Leaflet + Mock Data） |
+| [git-DQ](https://github.com/g5120u/git-DQ) | `2025-12` | JavaScript | 把 Git 操作包裝成互動式練習體驗 |
 
 
 

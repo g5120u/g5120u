@@ -54,3 +54,26 @@ private_product:
       - "Private tooling: practical workflow helpers, prototype validation, and cross-domain integration without public project details"
       - "Kept private: source code, settlement flow, operations details, data design, and core business logic"
 
+tech_stack:
+  zh:
+    title: "技術棧與實作範圍（Tech Stack Scope）"
+    note: "這裡呈現公開可理解的實作範圍，不用百分比包裝能力，也不公開核心程式。"
+    rows:
+      - layer: "Mobile"
+        tools: "Flutter / Android"
+        scope: "App 流程、實機展示、登入/狀態/權限與行動端 QA"
+      - layer: "Backend"
+        tools: "Node.js / Express"
+        scope: "API、服務切分、流程串接、錯誤處理與診斷"
+      - layer: "Realtime"
+        tools: "WebSocket / FCM"
+        scope: "即時事件、推播、狀態同步與裝置端驗證"
+      - layer: "Map"
+        tools: "Mapbox / Geocode / GPS"
+        scope: "地圖呈現、定位、地址/座標流程與地圖整合"
+      - layer: "Data"
+        tools: "PostgreSQL / migrations"
+        scope: "資料演進、狀態資料、稽核與流程資料整理"
+      - layer: "QA"
+        tools: "Playwright / ADB / logs"
+        scope: "瀏覽器流程、手機實機畫面、截圖證據與回歸檢查"
