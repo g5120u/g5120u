@@ -152,6 +152,8 @@ Source of truth:
 | Project | One-liner | Tech | Proof |
 |---|---|---|---|
 
+| **product-engineering-labs**<br/>`profile repo / showcase/product-engineering-labs` | 去敏產品工程樣本：狀態流程、API 邊界、防重複與測試 | Node.js, API, node:test | [Code](https://github.com/g5120u/g5120u/tree/main/showcase/product-engineering-labs) |
+
 | **365GeoWork-map-showcase**<br/>`g5120u/365GeoWork-map-showcase` | 地圖任務展示模組（公開示範，使用 Leaflet + Mock Data） | JavaScript, Leaflet | - |
 
 
@@ -192,6 +194,8 @@ Source of truth:
 
 | Project | Repo | Range (YYYY-MM) | Status |
 |---|---|---|---|
+
+| **product-engineering-labs** | `profile repo / showcase/product-engineering-labs` | 2026-08 → 2026-08 | active |
 
 | **365GeoWork-map-showcase** | `g5120u/365GeoWork-map-showcase` | 2025-12 → 2025-12 | active |
 

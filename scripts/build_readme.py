@@ -68,6 +68,7 @@ def build_project_timeline(projects: list[dict[str, Any]]) -> list[dict[str, str
     for p in projects:
         name = str(p.get("name", "")).strip() or str(p.get("key", "project"))
         repo = str(p.get("repo", "")).strip()
+        display_repo = str(p.get("display_repo", "")).strip() or repo
         status = str(p.get("status", "")).strip() or "active"
 
         start_end = None
@@ -87,7 +88,7 @@ def build_project_timeline(projects: list[dict[str, Any]]) -> list[dict[str, str
         rows.append(
             {
                 "name": name,
-                "repo": repo,
+                "repo": display_repo,
                 "status": status,
                 "start": start,
                 "end": end,
@@ -113,6 +114,8 @@ def build_recent_repo_fallback(projects: list[dict[str, Any]]) -> list[RecentRep
     repos: list[RecentRepo] = []
     for p in projects:
         if not isinstance(p, dict):
+            continue
+        if bool(p.get("hide_from_recent")):
             continue
         repo = str(p.get("repo", "")).strip()
         if "/" not in repo:

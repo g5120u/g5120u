@@ -130,7 +130,7 @@ Source of truth:
 | Project | One-liner | Tech | Proof |
 |---|---|---|---|
 {% for p in selected_projects %}
-| **{{ p.name }}**<br/>`{{ p.repo }}` | {{ (p.zh.one_liner if p.zh and p.zh.one_liner else "-") }} | {{ (", ".join(p.tech) if p.tech else "-") }} | {% if p.proof %}{% for pr in p.proof %}[{{ pr.label }}]({{ pr.url }}){% if not loop.last %}<br/>{% endif %}{% endfor %}{% else %}-{% endif %} |
+| **{{ p.name }}**<br/>`{{ p.display_repo if p.display_repo else p.repo }}` | {{ (p.zh.one_liner if p.zh and p.zh.one_liner else "-") }} | {{ (", ".join(p.tech) if p.tech else "-") }} | {% if p.proof %}{% for pr in p.proof %}[{{ pr.label }}]({{ pr.url }}){% if not loop.last %}<br/>{% endif %}{% endfor %}{% else %}-{% endif %} |
 {% endfor %}
 
 {% if lab_projects and lab_projects|length > 0 %}
@@ -139,7 +139,7 @@ Source of truth:
 | Project | What it explores | Tech |
 |---|---|---|
 {% for p in lab_projects %}
-| **{{ p.name }}**<br/>`{{ p.repo }}` | {{ (p.zh.one_liner if p.zh and p.zh.one_liner else "-") }} | {{ (", ".join(p.tech) if p.tech else "-") }} |
+| **{{ p.name }}**<br/>`{{ p.display_repo if p.display_repo else p.repo }}` | {{ (p.zh.one_liner if p.zh and p.zh.one_liner else "-") }} | {{ (", ".join(p.tech) if p.tech else "-") }} |
 {% endfor %}
 
 {% endif %}

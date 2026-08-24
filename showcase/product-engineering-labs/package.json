@@ -1,0 +1,14 @@
+{
+  "name": "product-engineering-labs",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Sanitized product engineering labs for state flows, API boundaries, and tests.",
+  "type": "module",
+  "scripts": {
+    "start": "node src/server.js",
+    "test": "node --test --experimental-test-isolation=none"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}
